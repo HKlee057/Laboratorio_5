@@ -59,34 +59,34 @@ void main(void) {
     PORTC = 0x00;
     PORTD = 0x00; 
     
-    while (1){                          //Siempre estar revisando 
+    while (1){                     //Siempre estar revisando 
     //CRITERIOS DE SUMA
-    if (BUTTON_ADD == 1){                    //Revisar si el botón del Jugador 1 es presionado
+    if (BUTTON_ADD == 1){          //Revisar si el botón de suma es presionado
         add_button=1;              //Encender variable de control
     }
     if (add_button==1 && BUTTON_ADD==0){  //Si la variable de control está activa, y no se sigue presionando, realizar el siguiente proceso
-        __delay_ms(10);                 //Delay 
-        count++;               //Aumentar variable de conteo de Jugador 1
-        PORTB = count;
-        add_button = 0;
+        __delay_ms(10);         //Delay 
+        count++;                //Aumentar variable de conteo 
+        PORTB = count;          //Igual valor de contador a Puerto B
+        add_button = 0;         //Apaga variable de control
         }
-    if (count==16){             //Si el conteo es igual a 8 se realiza lo siguiente
-        count = 0;
-        PORTB = count;
+    if (count==16){             //Si el conteo es igual a 16 se realiza lo siguiente
+        count = 0;              //Igualar conteo a 15, esto trunca el contador a 4 bits
+        PORTB = count;          //Igual valor de contador a Puerto B
     }
     //CRITERIOS DE RESTA
-    if (BUTTON_SUB == 1){                    //Revisar si el botón del Jugador 1 es presionado
+    if (BUTTON_SUB == 1){          //Revisar si el botón de resta es presionado
         sub_button=1;              //Encender variable de control
     }
     if (sub_button==1 && BUTTON_SUB==0){  //Si la variable de control está activa, y no se sigue presionando, realizar el siguiente proceso
-        __delay_ms(10);                 //Delay 
-        count--;               //Aumentar variable de conteo de Jugador 1
-        PORTB = count;
-        sub_button = 0;
+        __delay_ms(10);          //Delay 
+        count--;                //Disminuye variable de conteo
+        PORTB = count;          //Igual valor de contador a Puerto B
+        sub_button = 0;         //Apaga variable de control
         }
-    if (count==-1){             //Si el conteo es igual a 8 se realiza lo siguiente
-        count = 15;
-        PORTB = count;
+    if (count==-1){             //Si el conteo es igual a -1 se realiza lo siguiente
+        count = 15;             //Igualar conteo a 15, esto trunca el contador a 4 bits
+        PORTB = count;          //Igual valor de contador a Puerto B
         }
     }
     return;
@@ -99,7 +99,7 @@ void init(void){
     TRISA = 0;                       // PORTA configurado como salida
     TRISB = 0;                       // PORTB configurado como salida
     TRISC = 0;                       // PORTC configurado como salida
-    TRISD = 0b00001100;                       // PORTD configurado como entrada en los bits RD2 y RD3
+    TRISD = 0b00001100;              // PORTD configurado como entrada en los bits RD2 y RD3
     ANSEL = 0;                       // Pines connfigurados como entradas digitales
     ANSELH = 0;                      //Pines connfigurados como entradas digitales  
     //INTCON = 0b11100000;                      //Habilita GIE, PIE y T0IE 

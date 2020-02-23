@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\hecto\AppData\Local\Temp\s3p0.o
+$C:\Users\hecto\AppData\Local\Temp\s58s.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\SlaveLED_Lab_5.X.production.o
@@ -67,14 +67,14 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SlaveLED_Lab_5.X.production.o
-7F9 cinit CODE >615:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7F9 cinit CODE >618:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7F9 cinit CODE >635:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7FA cinit CODE >636:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7FB cinit CODE >637:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7FC cinit CODE >643:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7FC cinit CODE >645:C:\Users\hecto\AppData\Local\Temp\s3p0.s
-7FD cinit CODE >646:C:\Users\hecto\AppData\Local\Temp\s3p0.s
+7F9 cinit CODE >615:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7F9 cinit CODE >618:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7F9 cinit CODE >635:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7FA cinit CODE >636:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7FB cinit CODE >637:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7FC cinit CODE >643:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7FC cinit CODE >645:C:\Users\hecto\AppData\Local\Temp\s58s.s
+7FD cinit CODE >646:C:\Users\hecto\AppData\Local\Temp\s58s.s
 727 text2 CODE >98:C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
 727 text2 CODE >99:C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
 72A text2 CODE >100:C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
@@ -180,22 +180,22 @@ __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s3p0.o
+___sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s58s.o
 _init E4E 0 CODE 0 text2 dist/default/production\SlaveLED_Lab_5.X.production.o
 _main F1E 0 CODE 0 maintext dist/default/production\SlaveLED_Lab_5.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
-start 0 0 CODE 0 init C:\Users\hecto\AppData\Local\Temp\s3p0.o
+start 0 0 CODE 0 init C:\Users\hecto\AppData\Local\Temp\s58s.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __size_of_init 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s58s.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s58s.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s58s.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s58s.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s58s.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s58s.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
@@ -205,14 +205,14 @@ _ANSELH 189 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __size_of_initOsc 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 _add_button 77 0 COMMON 1 bssCOMMON dist/default/production\SlaveLED_Lab_5.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s3p0.o
-___stacklo 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s3p0.o
+___stackhi 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s58s.o
+___stacklo 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s58s.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 start_initialization FF2 0 CODE 0 cinit dist/default/production\SlaveLED_Lab_5.X.production.o
 _sub_button 76 0 COMMON 1 bssCOMMON dist/default/production\SlaveLED_Lab_5.X.production.o
 __end_of_initOsc F1E 0 CODE 0 text1 dist/default/production\SlaveLED_Lab_5.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s3p0.o
+___int_sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s58s.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -255,7 +255,7 @@ __S3 0 0 ABS 0 - -
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\SlaveLED_Lab_5.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\hecto\AppData\Local\Temp\s3p0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\hecto\AppData\Local\Temp\s58s.o
 initOsc@frec 72 0 COMMON 1 cstackCOMMON dist/default/production\SlaveLED_Lab_5.X.production.o
 __pmaintext F1E 0 CODE 0 maintext dist/default/production\SlaveLED_Lab_5.X.production.o
 __Lcommon 0 0 ABS 0 common -
