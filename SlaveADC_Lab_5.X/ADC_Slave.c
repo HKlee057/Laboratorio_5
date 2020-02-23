@@ -33,9 +33,55 @@
 
 #include "Oscilador.h"
 #include "ADC.h"
-
-#include <xc.h>
-
+//******************************************************************************
+// Funciones prototipo
+//******************************************************************************
+void init(void);
+//******************************************************************************
+// Variables
+//******************************************************************************
+uint8_t ADC_CH1_BIN = 0;
+//******************************************************************************
+//Void Principal
+//******************************************************************************
 void main(void) {
+    initOsc(7);                         // Se usa un reloj interno de 8 MHz
+    init();                             //Se inicializan los puertos
+    initADC();                          //Se inicializa el ADC
+    
+    PORTA = 0;                         //Inicialización de puertos
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0; 
+    
+    while (1){
+        __delay_ms(1);
+        ADCON0bits.CHS0 = 0;       //Selección de canal AN0
+        ADCON0bits.CHS1 = 0;
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS3 = 0;
+        ADCON0bits.ADON = 1;       //El ADC está habilitado
+        
+        PIR1bits.ADIF = 0;         //Verifica la finalización de conversión
+        ADCON0bits.GO = 1;         //Inicia conversión
+        ADC_CH1_BIN = ADRESH;      //Realiza conversión para leer normal
+        PORTB = ADC_CH1_BIN;
+        
+        __delay_ms(5);            //Delay de precaución
+    }
     return;
+}
+//******************************************************************************
+//Función de Inicialización de Puertos
+//******************************************************************************
+void init(void){
+    TRISA = 0b00000001;                 // PORTA configurado como entrada en RA0
+    TRISB = 0;                          // PORTB configurado como salida
+    TRISC = 0;                          // PORTC configurado como salida
+    TRISD = 0;                          // PORTD configurado como salida
+    ANSEL = 0b00000001;                 // Pines connfigurados A0 y A3 como entradas analógicas
+    ANSELH = 0;                         //Pines configurados como digitales 
+    /*INTCON = 0b11100000;                //Habilita GIE, PEIE y T0IE 
+    PIR1bits.SSPIF = 0;                 // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;                 // Habilitamos interrupción MSSP*/
 }

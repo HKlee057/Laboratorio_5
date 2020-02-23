@@ -2770,6 +2770,52 @@ void initADC(void);
 
 
 
+void init(void);
+
+
+
+uint8_t ADC_CH1_BIN = 0;
+
+
+
 void main(void) {
+    initOsc(7);
+    init();
+    initADC();
+
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+
+    while (1){
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        ADCON0bits.CHS0 = 0;
+        ADCON0bits.CHS1 = 0;
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS3 = 0;
+        ADCON0bits.ADON = 1;
+
+        PIR1bits.ADIF = 0;
+        ADCON0bits.GO = 1;
+        ADC_CH1_BIN = ADRESH;
+        PORTB = ADC_CH1_BIN;
+
+        _delay((unsigned long)((5)*(8000000/4000.0)));
+    }
     return;
+}
+
+
+
+void init(void){
+    TRISA = 0b00000001;
+    TRISB = 0;
+    TRISC = 0;
+    TRISD = 0;
+    ANSEL = 0b00000001;
+    ANSELH = 0;
+
+
+
 }
