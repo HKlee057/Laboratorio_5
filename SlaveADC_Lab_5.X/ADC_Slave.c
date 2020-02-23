@@ -42,6 +42,46 @@ void init(void);
 // Variables
 //******************************************************************************
 uint8_t ADC_CH1_BIN = 0;
+uint8_t z;
+uint8_t dato;
+
+//******************************************************************************
+// Interrupciones
+//******************************************************************************
+
+void __interrupt() isr(void){
+    //Interrupción del SSP
+    if(PIR1bits.SSPIF == 1){ 
+
+            SSPCONbits.CKP = 0;
+
+            if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+                z = SSPBUF;                 // Read the previous value to clear the buffer
+                SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+                SSPCONbits.WCOL = 0;        // Clear the collision bit
+                SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+            }
+
+            if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+                z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+                PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+                SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+                while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+                ADC_CH1_BIN = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+                __delay_us(250);
+
+            }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+                z = SSPBUF;
+                BF = 0;
+                SSPBUF = ADC_CH1_BIN;
+                SSPCONbits.CKP = 1;
+                __delay_us(250);
+                while(SSPSTATbits.BF);
+            }
+
+            PIR1bits.SSPIF = 0;    
+        }
+}
 //******************************************************************************
 //Void Principal
 //******************************************************************************
@@ -66,7 +106,7 @@ void main(void) {
         PIR1bits.ADIF = 0;         //Verifica la finalización de conversión
         ADCON0bits.GO = 1;         //Inicia conversión
         ADC_CH1_BIN = ADRESH;      //Realiza conversión para leer normal
-        PORTB = ADC_CH1_BIN;
+        //PORTB = ADC_CH1_BIN;
         
         __delay_ms(5);            //Delay de precaución
     }
@@ -82,6 +122,7 @@ void init(void){
     TRISD = 0;                          // PORTD configurado como salida
     ANSEL = 0b00000001;                 // Pines connfigurados A0 y A3 como entradas analógicas
     ANSELH = 0;                         //Pines configurados como digitales 
+    I2C_Slave_Init(0x30);
     /*INTCON = 0b11100000;                //Habilita GIE, PEIE y T0IE 
     PIR1bits.SSPIF = 0;                 // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;                 // Habilitamos interrupción MSSP*/

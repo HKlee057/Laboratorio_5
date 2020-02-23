@@ -2815,6 +2815,46 @@ void init(void);
 
 
 uint8_t ADC_CH1_BIN = 0;
+uint8_t z;
+uint8_t dato;
+
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void){
+
+    if(PIR1bits.SSPIF == 1){
+
+            SSPCONbits.CKP = 0;
+
+            if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+                z = SSPBUF;
+                SSPCONbits.SSPOV = 0;
+                SSPCONbits.WCOL = 0;
+                SSPCONbits.CKP = 1;
+            }
+
+            if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+                z = SSPBUF;
+                PIR1bits.SSPIF = 0;
+                SSPCONbits.CKP = 1;
+                while(!SSPSTATbits.BF);
+                ADC_CH1_BIN = SSPBUF;
+                _delay((unsigned long)((250)*(8000000/4000000.0)));
+
+            }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+                z = SSPBUF;
+                BF = 0;
+                SSPBUF = ADC_CH1_BIN;
+                SSPCONbits.CKP = 1;
+                _delay((unsigned long)((250)*(8000000/4000000.0)));
+                while(SSPSTATbits.BF);
+            }
+
+            PIR1bits.SSPIF = 0;
+        }
+}
 
 
 
@@ -2839,7 +2879,7 @@ void main(void) {
         PIR1bits.ADIF = 0;
         ADCON0bits.GO = 1;
         ADC_CH1_BIN = ADRESH;
-        PORTB = ADC_CH1_BIN;
+
 
         _delay((unsigned long)((5)*(8000000/4000.0)));
     }
@@ -2855,6 +2895,7 @@ void init(void){
     TRISD = 0;
     ANSEL = 0b00000001;
     ANSELH = 0;
+    I2C_Slave_Init(0x30);
 
 
 
