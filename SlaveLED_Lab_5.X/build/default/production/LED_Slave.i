@@ -2660,7 +2660,47 @@ typedef uint16_t uintptr_t;
 
 void initOsc(uint8_t frec);
 # 32 "LED_Slave.c" 2
-# 43 "LED_Slave.c"
+
+# 1 "./I2C.h" 1
+# 25 "./I2C.h"
+void I2C_Master_Init(const unsigned long c);
+
+
+
+
+
+
+
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+
+
+
+
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+# 33 "LED_Slave.c" 2
+# 44 "LED_Slave.c"
 unsigned char add_button=0;
 unsigned char sub_button=0;
 signed char count=0;

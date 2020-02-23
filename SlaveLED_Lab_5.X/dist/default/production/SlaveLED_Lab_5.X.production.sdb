@@ -11,9 +11,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"53 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
+"54 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
 [v _main main `(v  1 e 1 0 ]
-"98
+"99
 [v _init init `(v  1 e 1 0 ]
 "8 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\Oscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -63,16 +63,16 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"43 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
+"44 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
 [v _add_button add_button `uc  1 e 1 0 ]
-"44
-[v _sub_button sub_button `uc  1 e 1 0 ]
 "45
+[v _sub_button sub_button `uc  1 e 1 0 ]
+"46
 [v _count count `c  1 e 1 0 ]
-"53
+"54
 [v _main main `(v  1 e 1 0 ]
 {
-"93
+"94
 } 0
 "8 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\Oscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -82,8 +82,8 @@
 [v initOsc@frec frec `uc  1 a 1 2 ]
 "58
 } 0
-"98 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
+"99 C:\Users\hecto\Documents\GitHub\Laboratorio_5\SlaveLED_Lab_5.X\LED_Slave.c
 [v _init init `(v  1 e 1 0 ]
 {
-"106
+"107
 } 0

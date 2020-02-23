@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sat Feb 22 22:25:46 2020
+                                                                                               Sun Feb 23 17:54:59 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -364,7 +364,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    350 ;;
    351 ;; *************** function _main *****************
    352 ;; Defined at:
-   353 ;;		line 53 in file "LED_Slave.c"
+   353 ;;		line 54 in file "LED_Slave.c"
    354 ;; Parameters:    Size  Location     Type
    355 ;;		None
    356 ;; Auto vars:     Size  Location     Type
@@ -400,34 +400,34 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    386                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    387                           
    388                           
-   389                           ;LED_Slave.c: 54:     initOsc(7);
+   389                           ;LED_Slave.c: 55:     initOsc(7);
    390  078F  3007               	movlw	7
    391  0790  120A  118A  2733  120A  118A  	fcall	_initOsc
    392  0795                     l679:	
    393                           
-   394                           ;LED_Slave.c: 55:     init();
+   394                           ;LED_Slave.c: 56:     init();
    395  0795  120A  118A  2727  120A  118A  	fcall	_init
    396  079A                     l681:	
    397                           
-   398                           ;LED_Slave.c: 57:     PORTA = 0x00;
+   398                           ;LED_Slave.c: 58:     PORTA = 0x00;
    399  079A  1283               	bcf	3,5	;RP0=0, select bank0
    400  079B  1303               	bcf	3,6	;RP1=0, select bank0
    401  079C  0185               	clrf	5	;volatile
    402  079D                     l683:	
    403                           
-   404                           ;LED_Slave.c: 58:     PORTB = 0x00;
+   404                           ;LED_Slave.c: 59:     PORTB = 0x00;
    405  079D  0186               	clrf	6	;volatile
    406  079E                     l685:	
    407                           
-   408                           ;LED_Slave.c: 59:     PORTC = 0x00;
+   408                           ;LED_Slave.c: 60:     PORTC = 0x00;
    409  079E  0187               	clrf	7	;volatile
    410  079F                     l687:	
    411                           
-   412                           ;LED_Slave.c: 60:     PORTD = 0x00;
+   412                           ;LED_Slave.c: 61:     PORTD = 0x00;
    413  079F  0188               	clrf	8	;volatile
    414  07A0                     l689:	
    415                           
-   416                           ;LED_Slave.c: 64:     if (PORTDbits.RD2 == 1){
+   416                           ;LED_Slave.c: 65:     if (PORTDbits.RD2 == 1){
    417  07A0  1D08               	btfss	8,2	;volatile
    418  07A1  2FA3               	goto	u11
    419  07A2  2FA4               	goto	u10
@@ -436,12 +436,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    422  07A4                     u10:	
    423  07A4                     l691:	
    424                           
-   425                           ;LED_Slave.c: 65:         add_button=1;
+   425                           ;LED_Slave.c: 66:         add_button=1;
    426  07A4  01F7               	clrf	_add_button
    427  07A5  0AF7               	incf	_add_button,f
    428  07A6                     l693:	
    429                           
-   430                           ;LED_Slave.c: 67:     if (add_button==1 && PORTDbits.RD2==0){
+   430                           ;LED_Slave.c: 68:     if (add_button==1 && PORTDbits.RD2==0){
    431  07A6  0377               	decf	_add_button,w
    432  07A7  1D03               	btfss	3,2
    433  07A8  2FAA               	goto	u21
@@ -458,7 +458,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    444  07AF                     u30:	
    445  07AF                     l697:	
    446                           
-   447                           ;LED_Slave.c: 68:         _delay((unsigned long)((10)*(8000000/4000.0)));
+   447                           ;LED_Slave.c: 69:         _delay((unsigned long)((10)*(8000000/4000.0)));
    448  07AF  301A               	movlw	26
    449  07B0  00F4               	movwf	??_main+1
    450  07B1  30F8               	movlw	248
@@ -471,25 +471,25 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    457  07B7  0000               	nop
    458  07B8                     l699:	
    459                           
-   460                           ;LED_Slave.c: 69:         count++;
+   460                           ;LED_Slave.c: 70:         count++;
    461  07B8  3001               	movlw	1
    462  07B9  00F3               	movwf	??_main
    463  07BA  0873               	movf	??_main,w
    464  07BB  07F5               	addwf	_count,f
    465  07BC                     l701:	
    466                           
-   467                           ;LED_Slave.c: 70:         PORTB = count;
+   467                           ;LED_Slave.c: 71:         PORTB = count;
    468  07BC  0875               	movf	_count,w
    469  07BD  1283               	bcf	3,5	;RP0=0, select bank0
    470  07BE  1303               	bcf	3,6	;RP1=0, select bank0
    471  07BF  0086               	movwf	6	;volatile
    472  07C0                     l703:	
    473                           
-   474                           ;LED_Slave.c: 71:         add_button = 0;
+   474                           ;LED_Slave.c: 72:         add_button = 0;
    475  07C0  01F7               	clrf	_add_button
    476  07C1                     l705:	
    477                           
-   478                           ;LED_Slave.c: 73:     if (count==16){
+   478                           ;LED_Slave.c: 74:     if (count==16){
    479  07C1  3010               	movlw	16
    480  07C2  0675               	xorwf	_count,w
    481  07C3  1D03               	btfss	3,2
@@ -500,15 +500,15 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    486  07C7                     u40:	
    487  07C7                     l707:	
    488                           
-   489                           ;LED_Slave.c: 74:         count = 0;
+   489                           ;LED_Slave.c: 75:         count = 0;
    490  07C7  01F5               	clrf	_count
    491  07C8                     l709:	
    492                           
-   493                           ;LED_Slave.c: 75:         PORTB = count;
+   493                           ;LED_Slave.c: 76:         PORTB = count;
    494  07C8  0186               	clrf	6	;volatile
    495  07C9                     l711:	
    496                           
-   497                           ;LED_Slave.c: 78:     if (PORTDbits.RD3 == 1){
+   497                           ;LED_Slave.c: 79:     if (PORTDbits.RD3 == 1){
    498  07C9  1D88               	btfss	8,3	;volatile
    499  07CA  2FCC               	goto	u51
    500  07CB  2FCD               	goto	u50
@@ -517,12 +517,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    503  07CD                     u50:	
    504  07CD                     l713:	
    505                           
-   506                           ;LED_Slave.c: 79:         sub_button=1;
+   506                           ;LED_Slave.c: 80:         sub_button=1;
    507  07CD  01F6               	clrf	_sub_button
    508  07CE  0AF6               	incf	_sub_button,f
    509  07CF                     l715:	
    510                           
-   511                           ;LED_Slave.c: 81:     if (sub_button==1 && PORTDbits.RD3==0){
+   511                           ;LED_Slave.c: 82:     if (sub_button==1 && PORTDbits.RD3==0){
    512  07CF  0376               	decf	_sub_button,w
    513  07D0  1D03               	btfss	3,2
    514  07D1  2FD3               	goto	u61
@@ -539,7 +539,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    525  07D8                     u70:	
    526  07D8                     l719:	
    527                           
-   528                           ;LED_Slave.c: 82:         _delay((unsigned long)((10)*(8000000/4000.0)));
+   528                           ;LED_Slave.c: 83:         _delay((unsigned long)((10)*(8000000/4000.0)));
    529  07D8  301A               	movlw	26
    530  07D9  00F4               	movwf	??_main+1
    531  07DA  30F8               	movlw	248
@@ -552,25 +552,25 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    538  07E0  0000               	nop
    539  07E1                     l721:	
    540                           
-   541                           ;LED_Slave.c: 83:         count--;
+   541                           ;LED_Slave.c: 84:         count--;
    542  07E1  30FF               	movlw	255
    543  07E2  00F3               	movwf	??_main
    544  07E3  0873               	movf	??_main,w
    545  07E4  07F5               	addwf	_count,f
    546  07E5                     l723:	
    547                           
-   548                           ;LED_Slave.c: 84:         PORTB = count;
+   548                           ;LED_Slave.c: 85:         PORTB = count;
    549  07E5  0875               	movf	_count,w
    550  07E6  1283               	bcf	3,5	;RP0=0, select bank0
    551  07E7  1303               	bcf	3,6	;RP1=0, select bank0
    552  07E8  0086               	movwf	6	;volatile
    553  07E9                     l725:	
    554                           
-   555                           ;LED_Slave.c: 85:         sub_button = 0;
+   555                           ;LED_Slave.c: 86:         sub_button = 0;
    556  07E9  01F6               	clrf	_sub_button
    557  07EA                     l727:	
    558                           
-   559                           ;LED_Slave.c: 87:     if (count==-1){
+   559                           ;LED_Slave.c: 88:     if (count==-1){
    560  07EA  0A75               	incf	_count,w
    561  07EB  1D03               	btfss	3,2
    562  07EC  2FEE               	goto	u81
@@ -580,13 +580,13 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    566  07EF                     u80:	
    567  07EF                     l729:	
    568                           
-   569                           ;LED_Slave.c: 88:         count = 15;
+   569                           ;LED_Slave.c: 89:         count = 15;
    570  07EF  300F               	movlw	15
    571  07F0  00F3               	movwf	??_main
    572  07F1  0873               	movf	??_main,w
    573  07F2  00F5               	movwf	_count
    574                           
-   575                           ;LED_Slave.c: 89:         PORTB = count;
+   575                           ;LED_Slave.c: 90:         PORTB = count;
    576  07F3  300F               	movlw	15
    577  07F4  0086               	movwf	6	;volatile
    578  07F5  2FA0               	goto	l689
@@ -857,7 +857,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    842  0727                     __ptext2:	
    843 ;; *************** function _init *****************
    844 ;; Defined at:
-   845 ;;		line 98 in file "LED_Slave.c"
+   845 ;;		line 99 in file "LED_Slave.c"
    846 ;; Parameters:    Size  Location     Type
    847 ;;		None
    848 ;; Auto vars:     Size  Location     Type
@@ -892,30 +892,30 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    877                           ; Regs used in _init: [wreg+status,2]
    878                           
    879                           
-   880                           ;LED_Slave.c: 99:     TRISA = 0;
+   880                           ;LED_Slave.c: 100:     TRISA = 0;
    881  0727  1683               	bsf	3,5	;RP0=1, select bank1
    882  0728  1303               	bcf	3,6	;RP1=0, select bank1
    883  0729  0185               	clrf	5	;volatile
    884                           
-   885                           ;LED_Slave.c: 100:     TRISB = 0;
+   885                           ;LED_Slave.c: 101:     TRISB = 0;
    886  072A  0186               	clrf	6	;volatile
    887                           
-   888                           ;LED_Slave.c: 101:     TRISC = 0;
+   888                           ;LED_Slave.c: 102:     TRISC = 0;
    889  072B  0187               	clrf	7	;volatile
    890  072C                     l671:	
    891                           
-   892                           ;LED_Slave.c: 102:     TRISD = 0b00001100;
+   892                           ;LED_Slave.c: 103:     TRISD = 0b00001100;
    893  072C  300C               	movlw	12
    894  072D  0088               	movwf	8	;volatile
    895  072E                     l673:	
    896                           
-   897                           ;LED_Slave.c: 103:     ANSEL = 0;
+   897                           ;LED_Slave.c: 104:     ANSEL = 0;
    898  072E  1683               	bsf	3,5	;RP0=1, select bank3
    899  072F  1703               	bsf	3,6	;RP1=1, select bank3
    900  0730  0188               	clrf	8	;volatile
    901  0731                     l675:	
    902                           
-   903                           ;LED_Slave.c: 104:     ANSELH = 0;
+   903                           ;LED_Slave.c: 105:     ANSELH = 0;
    904  0731  0189               	clrf	9	;volatile
    905  0732                     l51:	
    906  0732  0008               	return
@@ -1017,7 +1017,7 @@ DATA                 0      0       8      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sat Feb 22 22:25:46 2020
+Symbol Table                                                                                   Sun Feb 23 17:54:59 2020
 
              __CFG_CP$OFF 0000                        l51 0732                        l60 0741  
                       l61 0747                        l62 074D                        l63 0753  

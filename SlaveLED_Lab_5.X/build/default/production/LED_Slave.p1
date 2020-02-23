@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
 "19 ./Oscilador.h
 [v _initOsc `(v ~T0 @X0 0 ef1`uc ]
-"49 LED_Slave.c
-[; ;LED_Slave.c: 49: void init(void);
+"50 LED_Slave.c
+[; ;LED_Slave.c: 50: void init(void);
 [v _init `(v ~T0 @X0 0 ef ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
@@ -310,181 +310,181 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "11 ./Oscilador.h
 [p x FOSC = INTRC_NOCLKOUT ]
-"43 LED_Slave.c
-[; ;LED_Slave.c: 43: unsigned char add_button=0;
+"44 LED_Slave.c
+[; ;LED_Slave.c: 44: unsigned char add_button=0;
 [v _add_button `uc ~T0 @X0 1 e ]
 [i _add_button
 -> -> 0 `i `uc
 ]
-"44
-[; ;LED_Slave.c: 44: unsigned char sub_button=0;
+"45
+[; ;LED_Slave.c: 45: unsigned char sub_button=0;
 [v _sub_button `uc ~T0 @X0 1 e ]
 [i _sub_button
 -> -> 0 `i `uc
 ]
-"45
-[; ;LED_Slave.c: 45: signed char count=0;
+"46
+[; ;LED_Slave.c: 46: signed char count=0;
 [v _count `c ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `c
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"53
-[; ;LED_Slave.c: 53: void main(void) {
+"54
+[; ;LED_Slave.c: 54: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"54
-[; ;LED_Slave.c: 54:     initOsc(7);
-[e ( _initOsc (1 -> -> 7 `i `uc ]
 "55
-[; ;LED_Slave.c: 55:     init();
+[; ;LED_Slave.c: 55:     initOsc(7);
+[e ( _initOsc (1 -> -> 7 `i `uc ]
+"56
+[; ;LED_Slave.c: 56:     init();
 [e ( _init ..  ]
-"57
-[; ;LED_Slave.c: 57:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
 "58
-[; ;LED_Slave.c: 58:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 58:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
 "59
-[; ;LED_Slave.c: 59:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 59:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "60
-[; ;LED_Slave.c: 60:     PORTD = 0x00;
+[; ;LED_Slave.c: 60:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"61
+[; ;LED_Slave.c: 61:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"62
-[; ;LED_Slave.c: 62:     while (1){
+"63
+[; ;LED_Slave.c: 63:     while (1){
 [e :U 140 ]
 {
-"64
-[; ;LED_Slave.c: 64:     if (PORTDbits.RD2 == 1){
+"65
+[; ;LED_Slave.c: 65:     if (PORTDbits.RD2 == 1){
 [e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 142  ]
 {
-"65
-[; ;LED_Slave.c: 65:         add_button=1;
-[e = _add_button -> -> 1 `i `uc ]
 "66
-[; ;LED_Slave.c: 66:     }
+[; ;LED_Slave.c: 66:         add_button=1;
+[e = _add_button -> -> 1 `i `uc ]
+"67
+[; ;LED_Slave.c: 67:     }
 }
 [e :U 142 ]
-"67
-[; ;LED_Slave.c: 67:     if (add_button==1 && PORTDbits.RD2==0){
+"68
+[; ;LED_Slave.c: 68:     if (add_button==1 && PORTDbits.RD2==0){
 [e $ ! && == -> _add_button `i -> 1 `i == -> . . _PORTDbits 0 2 `i -> 0 `i 143  ]
 {
-"68
-[; ;LED_Slave.c: 68:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "69
-[; ;LED_Slave.c: 69:         count++;
-[e ++ _count -> -> 1 `i `c ]
+[; ;LED_Slave.c: 69:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "70
-[; ;LED_Slave.c: 70:         PORTB = count;
-[e = _PORTB -> _count `uc ]
+[; ;LED_Slave.c: 70:         count++;
+[e ++ _count -> -> 1 `i `c ]
 "71
-[; ;LED_Slave.c: 71:         add_button = 0;
-[e = _add_button -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 71:         PORTB = count;
+[e = _PORTB -> _count `uc ]
 "72
-[; ;LED_Slave.c: 72:         }
+[; ;LED_Slave.c: 72:         add_button = 0;
+[e = _add_button -> -> 0 `i `uc ]
+"73
+[; ;LED_Slave.c: 73:         }
 }
 [e :U 143 ]
-"73
-[; ;LED_Slave.c: 73:     if (count==16){
+"74
+[; ;LED_Slave.c: 74:     if (count==16){
 [e $ ! == -> _count `i -> 16 `i 144  ]
 {
-"74
-[; ;LED_Slave.c: 74:         count = 0;
-[e = _count -> -> 0 `i `c ]
 "75
-[; ;LED_Slave.c: 75:         PORTB = count;
-[e = _PORTB -> _count `uc ]
+[; ;LED_Slave.c: 75:         count = 0;
+[e = _count -> -> 0 `i `c ]
 "76
-[; ;LED_Slave.c: 76:     }
+[; ;LED_Slave.c: 76:         PORTB = count;
+[e = _PORTB -> _count `uc ]
+"77
+[; ;LED_Slave.c: 77:     }
 }
 [e :U 144 ]
-"78
-[; ;LED_Slave.c: 78:     if (PORTDbits.RD3 == 1){
+"79
+[; ;LED_Slave.c: 79:     if (PORTDbits.RD3 == 1){
 [e $ ! == -> . . _PORTDbits 0 3 `i -> 1 `i 145  ]
 {
-"79
-[; ;LED_Slave.c: 79:         sub_button=1;
-[e = _sub_button -> -> 1 `i `uc ]
 "80
-[; ;LED_Slave.c: 80:     }
+[; ;LED_Slave.c: 80:         sub_button=1;
+[e = _sub_button -> -> 1 `i `uc ]
+"81
+[; ;LED_Slave.c: 81:     }
 }
 [e :U 145 ]
-"81
-[; ;LED_Slave.c: 81:     if (sub_button==1 && PORTDbits.RD3==0){
+"82
+[; ;LED_Slave.c: 82:     if (sub_button==1 && PORTDbits.RD3==0){
 [e $ ! && == -> _sub_button `i -> 1 `i == -> . . _PORTDbits 0 3 `i -> 0 `i 146  ]
 {
-"82
-[; ;LED_Slave.c: 82:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "83
-[; ;LED_Slave.c: 83:         count--;
-[e -- _count -> -> 1 `i `c ]
+[; ;LED_Slave.c: 83:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "84
-[; ;LED_Slave.c: 84:         PORTB = count;
-[e = _PORTB -> _count `uc ]
+[; ;LED_Slave.c: 84:         count--;
+[e -- _count -> -> 1 `i `c ]
 "85
-[; ;LED_Slave.c: 85:         sub_button = 0;
-[e = _sub_button -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 85:         PORTB = count;
+[e = _PORTB -> _count `uc ]
 "86
-[; ;LED_Slave.c: 86:         }
+[; ;LED_Slave.c: 86:         sub_button = 0;
+[e = _sub_button -> -> 0 `i `uc ]
+"87
+[; ;LED_Slave.c: 87:         }
 }
 [e :U 146 ]
-"87
-[; ;LED_Slave.c: 87:     if (count==-1){
+"88
+[; ;LED_Slave.c: 88:     if (count==-1){
 [e $ ! == -> _count `i -U -> 1 `i 147  ]
 {
-"88
-[; ;LED_Slave.c: 88:         count = 15;
-[e = _count -> -> 15 `i `c ]
 "89
-[; ;LED_Slave.c: 89:         PORTB = count;
-[e = _PORTB -> _count `uc ]
+[; ;LED_Slave.c: 89:         count = 15;
+[e = _count -> -> 15 `i `c ]
 "90
-[; ;LED_Slave.c: 90:         }
+[; ;LED_Slave.c: 90:         PORTB = count;
+[e = _PORTB -> _count `uc ]
+"91
+[; ;LED_Slave.c: 91:         }
 }
 [e :U 147 ]
-"91
-[; ;LED_Slave.c: 91:     }
+"92
+[; ;LED_Slave.c: 92:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"92
-[; ;LED_Slave.c: 92:     return;
-[e $UE 138  ]
 "93
-[; ;LED_Slave.c: 93: }
+[; ;LED_Slave.c: 93:     return;
+[e $UE 138  ]
+"94
+[; ;LED_Slave.c: 94: }
 [e :UE 138 ]
 }
-"98
-[; ;LED_Slave.c: 98: void init(void){
+"99
+[; ;LED_Slave.c: 99: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"99
-[; ;LED_Slave.c: 99:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
 "100
-[; ;LED_Slave.c: 100:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 100:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "101
-[; ;LED_Slave.c: 101:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 101:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "102
-[; ;LED_Slave.c: 102:     TRISD = 0b00001100;
-[e = _TRISD -> -> 12 `i `uc ]
+[; ;LED_Slave.c: 102:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "103
-[; ;LED_Slave.c: 103:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;LED_Slave.c: 103:     TRISD = 0b00001100;
+[e = _TRISD -> -> 12 `i `uc ]
 "104
-[; ;LED_Slave.c: 104:     ANSELH = 0;
+[; ;LED_Slave.c: 104:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"105
+[; ;LED_Slave.c: 105:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"106
-[; ;LED_Slave.c: 106: }
+"107
+[; ;LED_Slave.c: 107: }
 [e :UE 148 ]
 }
