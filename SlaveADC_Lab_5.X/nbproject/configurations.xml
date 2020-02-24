@@ -16,9 +16,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>ADC.c</itemPath>
-      <itemPath>ADC_Slave.c</itemPath>
       <itemPath>Oscilador.c</itemPath>
       <itemPath>I2C.c</itemPath>
+      <itemPath>ADC_Slave.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

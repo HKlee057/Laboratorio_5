@@ -170,7 +170,7 @@ config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 7A COMMON 70 1
 %locals
 dist/default/production\SlaveADC_Lab_5.X.production.o
-C:\Users\hecto\AppData\Local\Temp\seqk.s
+C:\Users\hecto\AppData\Local\Temp\s3io.s
 969 F 0 CODE 0
 972 F 0 CODE 0
 989 F 0 CODE 0

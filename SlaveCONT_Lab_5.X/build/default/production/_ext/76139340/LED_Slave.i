@@ -2804,6 +2804,6 @@ void init(void){
     TRISD = 0b00001100;
     ANSEL = 0;
     ANSELH = 0;
-    I2C_Slave_Init(0x90);
+    I2C_Slave_Init(0x60);
 
 }

@@ -668,8 +668,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c: 146:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
 "147
-[; ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c: 147:     I2C_Slave_Init(0x90);
-[e ( _I2C_Slave_Init (1 -> -> 144 `i `uc ]
+[; ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c: 147:     I2C_Slave_Init(0x60);
+[e ( _I2C_Slave_Init (1 -> -> 96 `i `uc ]
 "149
 [; ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c: 149: }
 [e :UE 160 ]

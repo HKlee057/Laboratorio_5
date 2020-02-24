@@ -166,7 +166,7 @@ config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 7C COMMON 70 1
 %locals
 dist/default/production\SlaveCONT_Lab_5.X.production.o
-C:\Users\hecto\AppData\Local\Temp\sd68.s
+C:\Users\hecto\AppData\Local\Temp\sbm8.s
 810 F 0 CODE 0
 813 F 0 CODE 0
 836 F 0 CODE 0
