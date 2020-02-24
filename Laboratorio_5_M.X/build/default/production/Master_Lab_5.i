@@ -2831,8 +2831,12 @@ void main(void) {
 
 
 
-        LCD_POINT(2,6);
-        lcd_dwr(Val_STR(CONT_C));
+
+        CONT_U = (uint8_t)((Val_CONT)%((uint8_t)10));
+
+        CONT_D = (uint8_t)((Val_CONT)/((uint8_t)10));
+
+
 
         LCD_POINT(2,7);
         lcd_dwr(Val_STR(CONT_D));

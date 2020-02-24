@@ -147,12 +147,16 @@ void main(void) {
         
         LCD_POINT(2,3);
         lcd_dwr(Val_STR(POT_D2));                               //Se envía el caracter correspondiente al segundo decimal
+        
+        //******************************************************************************************
+        // Proceso para obtener el número del dato del CONTADOR para mandarlos a la LCD 
+        //******************************************************************************************
+        CONT_U = (uint8_t)((Val_CONT)%((uint8_t)10));         //Se realiza la división mod. obteniendo el segundo decimal -> 254 => 4
+        
+        CONT_D = (uint8_t)((Val_CONT)/((uint8_t)10));   //Se divide dentro de 10 el valor en entero -> 254 => 25
         //************************************************************************
         // Se envían los digitos a la columna correspondiente de la LCD (CONTADOR)
         //************************************************************************  
-        LCD_POINT(2,6);
-        lcd_dwr(Val_STR(CONT_C));                               //Se envia el caracter correspondiente de las centenas del contador
-        
         LCD_POINT(2,7);
         lcd_dwr(Val_STR(CONT_D));                               //Se envia el caracter correspondiente de las decenas del contador
         
