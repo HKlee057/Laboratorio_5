@@ -2723,6 +2723,32 @@ uint8_t Val_STR(uint8_t num);
 
 
 
+uint8_t Val_POT = 0;
+uint8_t Val_CONT = 0;
+uint8_t Val_RES = 0;
+
+float ADC_POT_V = 0;
+float ADC_RES_V;
+float POT_cien = 0;
+float RES_cien = 0;
+
+uint8_t POT_EN = 0;
+uint8_t RES_EN = 0;
+uint8_t POT_D1 = 0;
+uint8_t POT_D2 = 0;
+uint8_t RES_D1 = 0;
+uint8_t RES_D2 = 0;
+uint8_t CONT_U = 0;
+uint8_t CONT_D = 0;
+uint8_t CONT_C = 0;
+
+uint16_t DECI_1_POT = 0;
+uint16_t DECI_2_POT = 0;
+uint16_t DECI_1_RES = 0;
+uint16_t DECI_2_RES = 0;
+
+
+
 void main(void) {
     initOsc(7);
     init();
@@ -2749,6 +2775,93 @@ void main(void) {
     lcd_dwr('.');
     LCD_POINT(2,14);
     lcd_dwr('V');
+
+    while (1){
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x31);
+        Val_POT = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x61);
+        Val_CONT = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x91);
+        Val_RES = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+
+
+        ADC_POT_V = (float)((Val_POT)/((float)51));
+        ADC_RES_V = (float)((Val_RES)/((float)51));
+
+
+
+        POT_cien = (float)((ADC_POT_V)*((float)100));
+        DECI_1_POT = (uint16_t)(POT_cien);
+        POT_D2 = (uint8_t)((DECI_1_POT)%((uint8_t)10));
+
+        DECI_2_POT = (uint16_t)((DECI_1_POT)/((uint16_t)10));
+        POT_D1 = (uint8_t)((DECI_2_POT)%((uint8_t)10));
+
+        POT_EN = (uint16_t)(ADC_POT_V);
+
+
+
+        LCD_POINT(2,0);
+        lcd_dwr(Val_STR(POT_EN));
+
+        LCD_POINT(2,2);
+        lcd_dwr(Val_STR(POT_D1));
+
+        LCD_POINT(2,3);
+        lcd_dwr(Val_STR(POT_D2));
+
+
+
+        LCD_POINT(2,6);
+        lcd_dwr(Val_STR(CONT_C));
+
+        LCD_POINT(2,7);
+        lcd_dwr(Val_STR(CONT_D));
+
+        LCD_POINT(2,8);
+        lcd_dwr(Val_STR(CONT_U));
+
+
+
+        RES_cien = (float)((ADC_RES_V)*((float)100));
+        DECI_1_RES = (uint16_t)(RES_cien);
+        RES_D2 = (uint8_t)((DECI_1_RES)%((uint8_t)10));
+
+        DECI_2_RES = (uint16_t)((DECI_1_RES)/((uint16_t)10));
+        RES_D1 = (uint8_t)((DECI_2_RES)%((uint8_t)10));
+
+        RES_EN = (uint16_t)(ADC_RES_V);
+
+
+
+        LCD_POINT(2,10);
+        lcd_dwr(Val_STR(RES_EN));
+
+        LCD_POINT(2,12);
+        lcd_dwr(Val_STR(RES_D1));
+
+        LCD_POINT(2,13);
+        lcd_dwr(Val_STR(RES_D2));
+    }
     return;
 }
 
@@ -2762,11 +2875,7 @@ void init(void){
     ANSEL = 0;
     ANSELH = 0;
     I2C_Master_Init(100000);
-
-
-
 }
-
 
 
 

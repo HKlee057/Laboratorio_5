@@ -29,6 +29,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;./LCD.h: 37: void lcd_dwr(unsigned char x);
 [v _lcd_dwr `(v ~T0 @X0 0 ef1`uc ]
+"37 ./I2C.h
+[; ;./I2C.h: 37: void I2C_Master_Start(void);
+[v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
+"51
+[; ;./I2C.h: 51: void I2C_Master_Write(unsigned d);
+[v _I2C_Master_Write `(v ~T0 @X0 0 ef1`ui ]
+"56
+[; ;./I2C.h: 56: unsigned short I2C_Master_Read(unsigned short a);
+[v _I2C_Master_Read `(us ~T0 @X0 0 ef1`us ]
+"45
+[; ;./I2C.h: 45: void I2C_Master_Stop(void);
+[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"41 Master_Lab_5.c
+[; ;Master_Lab_5.c: 41: uint8_t Val_STR(uint8_t num);
+[v _Val_STR `(uc ~T0 @X0 0 ef1`uc ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -310,215 +329,483 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "11 ./Oscilador.h
 [p x FOSC = INTRC_NOCLKOUT ]
-[v $root$_main `(v ~T0 @X0 0 e ]
 "45 Master_Lab_5.c
-[; ;Master_Lab_5.c: 45: void main(void) {
+[; ;Master_Lab_5.c: 45: uint8_t Val_POT = 0;
+[v _Val_POT `uc ~T0 @X0 1 e ]
+[i _Val_POT
+-> -> 0 `i `uc
+]
+"46
+[; ;Master_Lab_5.c: 46: uint8_t Val_CONT = 0;
+[v _Val_CONT `uc ~T0 @X0 1 e ]
+[i _Val_CONT
+-> -> 0 `i `uc
+]
+"47
+[; ;Master_Lab_5.c: 47: uint8_t Val_RES = 0;
+[v _Val_RES `uc ~T0 @X0 1 e ]
+[i _Val_RES
+-> -> 0 `i `uc
+]
+"49
+[; ;Master_Lab_5.c: 49: float ADC_POT_V = 0;
+[v _ADC_POT_V `f ~T0 @X0 1 e ]
+[i _ADC_POT_V
+-> -> 0 `i `f
+]
+"50
+[; ;Master_Lab_5.c: 50: float ADC_RES_V;
+[v _ADC_RES_V `f ~T0 @X0 1 e ]
+"51
+[; ;Master_Lab_5.c: 51: float POT_cien = 0;
+[v _POT_cien `f ~T0 @X0 1 e ]
+[i _POT_cien
+-> -> 0 `i `f
+]
+"52
+[; ;Master_Lab_5.c: 52: float RES_cien = 0;
+[v _RES_cien `f ~T0 @X0 1 e ]
+[i _RES_cien
+-> -> 0 `i `f
+]
+"54
+[; ;Master_Lab_5.c: 54: uint8_t POT_EN = 0;
+[v _POT_EN `uc ~T0 @X0 1 e ]
+[i _POT_EN
+-> -> 0 `i `uc
+]
+"55
+[; ;Master_Lab_5.c: 55: uint8_t RES_EN = 0;
+[v _RES_EN `uc ~T0 @X0 1 e ]
+[i _RES_EN
+-> -> 0 `i `uc
+]
+"56
+[; ;Master_Lab_5.c: 56: uint8_t POT_D1 = 0;
+[v _POT_D1 `uc ~T0 @X0 1 e ]
+[i _POT_D1
+-> -> 0 `i `uc
+]
+"57
+[; ;Master_Lab_5.c: 57: uint8_t POT_D2 = 0;
+[v _POT_D2 `uc ~T0 @X0 1 e ]
+[i _POT_D2
+-> -> 0 `i `uc
+]
+"58
+[; ;Master_Lab_5.c: 58: uint8_t RES_D1 = 0;
+[v _RES_D1 `uc ~T0 @X0 1 e ]
+[i _RES_D1
+-> -> 0 `i `uc
+]
+"59
+[; ;Master_Lab_5.c: 59: uint8_t RES_D2 = 0;
+[v _RES_D2 `uc ~T0 @X0 1 e ]
+[i _RES_D2
+-> -> 0 `i `uc
+]
+"60
+[; ;Master_Lab_5.c: 60: uint8_t CONT_U = 0;
+[v _CONT_U `uc ~T0 @X0 1 e ]
+[i _CONT_U
+-> -> 0 `i `uc
+]
+"61
+[; ;Master_Lab_5.c: 61: uint8_t CONT_D = 0;
+[v _CONT_D `uc ~T0 @X0 1 e ]
+[i _CONT_D
+-> -> 0 `i `uc
+]
+"62
+[; ;Master_Lab_5.c: 62: uint8_t CONT_C = 0;
+[v _CONT_C `uc ~T0 @X0 1 e ]
+[i _CONT_C
+-> -> 0 `i `uc
+]
+"64
+[; ;Master_Lab_5.c: 64: uint16_t DECI_1_POT = 0;
+[v _DECI_1_POT `ui ~T0 @X0 1 e ]
+[i _DECI_1_POT
+-> -> 0 `i `ui
+]
+"65
+[; ;Master_Lab_5.c: 65: uint16_t DECI_2_POT = 0;
+[v _DECI_2_POT `ui ~T0 @X0 1 e ]
+[i _DECI_2_POT
+-> -> 0 `i `ui
+]
+"66
+[; ;Master_Lab_5.c: 66: uint16_t DECI_1_RES = 0;
+[v _DECI_1_RES `ui ~T0 @X0 1 e ]
+[i _DECI_1_RES
+-> -> 0 `i `ui
+]
+"67
+[; ;Master_Lab_5.c: 67: uint16_t DECI_2_RES = 0;
+[v _DECI_2_RES `ui ~T0 @X0 1 e ]
+[i _DECI_2_RES
+-> -> 0 `i `ui
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"71
+[; ;Master_Lab_5.c: 71: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"46
-[; ;Master_Lab_5.c: 46:     initOsc(7);
-[e ( _initOsc (1 -> -> 7 `i `uc ]
-"47
-[; ;Master_Lab_5.c: 47:     init();
-[e ( _init ..  ]
-"48
-[; ;Master_Lab_5.c: 48:     lcd_init();
-[e ( _lcd_init ..  ]
-"50
-[; ;Master_Lab_5.c: 50:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"51
-[; ;Master_Lab_5.c: 51:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"52
-[; ;Master_Lab_5.c: 52:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"53
-[; ;Master_Lab_5.c: 53:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"55
-[; ;Master_Lab_5.c: 55:     LCD_POINT(1,2);
-[e ( _LCD_POINT (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"56
-[; ;Master_Lab_5.c: 56:     lcd_msg("S1");
-[e ( _lcd_msg (1 :s 1C ]
-"57
-[; ;Master_Lab_5.c: 57:     LCD_POINT(1,7);
-[e ( _LCD_POINT (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
-"58
-[; ;Master_Lab_5.c: 58:     lcd_msg("S2");
-[e ( _lcd_msg (1 :s 2C ]
-"59
-[; ;Master_Lab_5.c: 59:     LCD_POINT(1,12);
-[e ( _LCD_POINT (2 , -> -> 1 `i `uc -> -> 12 `i `uc ]
-"60
-[; ;Master_Lab_5.c: 60:     lcd_msg("S3");
-[e ( _lcd_msg (1 :s 3C ]
-"62
-[; ;Master_Lab_5.c: 62:     LCD_POINT(2,1);
-[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"63
-[; ;Master_Lab_5.c: 63:     lcd_dwr('.');
-[e ( _lcd_dwr (1 -> -> 46 `ui `uc ]
-"64
-[; ;Master_Lab_5.c: 64:     LCD_POINT(2,4);
-[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
-"65
-[; ;Master_Lab_5.c: 65:     lcd_dwr('V');
-[e ( _lcd_dwr (1 -> -> 86 `ui `uc ]
-"67
-[; ;Master_Lab_5.c: 67:     LCD_POINT(2,11);
-[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
-"68
-[; ;Master_Lab_5.c: 68:     lcd_dwr('.');
-[e ( _lcd_dwr (1 -> -> 46 `ui `uc ]
-"69
-[; ;Master_Lab_5.c: 69:     LCD_POINT(2,14);
-[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
-"70
-[; ;Master_Lab_5.c: 70:     lcd_dwr('V');
-[e ( _lcd_dwr (1 -> -> 86 `ui `uc ]
-"71
-[; ;Master_Lab_5.c: 71:     return;
-[e $UE 138  ]
 "72
-[; ;Master_Lab_5.c: 72: }
+[; ;Master_Lab_5.c: 72:     initOsc(7);
+[e ( _initOsc (1 -> -> 7 `i `uc ]
+"73
+[; ;Master_Lab_5.c: 73:     init();
+[e ( _init ..  ]
+"74
+[; ;Master_Lab_5.c: 74:     lcd_init();
+[e ( _lcd_init ..  ]
+"76
+[; ;Master_Lab_5.c: 76:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"77
+[; ;Master_Lab_5.c: 77:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"78
+[; ;Master_Lab_5.c: 78:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"79
+[; ;Master_Lab_5.c: 79:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"81
+[; ;Master_Lab_5.c: 81:     LCD_POINT(1,2);
+[e ( _LCD_POINT (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"82
+[; ;Master_Lab_5.c: 82:     lcd_msg("S1");
+[e ( _lcd_msg (1 :s 1C ]
+"83
+[; ;Master_Lab_5.c: 83:     LCD_POINT(1,7);
+[e ( _LCD_POINT (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+"84
+[; ;Master_Lab_5.c: 84:     lcd_msg("S2");
+[e ( _lcd_msg (1 :s 2C ]
+"85
+[; ;Master_Lab_5.c: 85:     LCD_POINT(1,12);
+[e ( _LCD_POINT (2 , -> -> 1 `i `uc -> -> 12 `i `uc ]
+"86
+[; ;Master_Lab_5.c: 86:     lcd_msg("S3");
+[e ( _lcd_msg (1 :s 3C ]
+"88
+[; ;Master_Lab_5.c: 88:     LCD_POINT(2,1);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"89
+[; ;Master_Lab_5.c: 89:     lcd_dwr('.');
+[e ( _lcd_dwr (1 -> -> 46 `ui `uc ]
+"90
+[; ;Master_Lab_5.c: 90:     LCD_POINT(2,4);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
+"91
+[; ;Master_Lab_5.c: 91:     lcd_dwr('V');
+[e ( _lcd_dwr (1 -> -> 86 `ui `uc ]
+"93
+[; ;Master_Lab_5.c: 93:     LCD_POINT(2,11);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
+"94
+[; ;Master_Lab_5.c: 94:     lcd_dwr('.');
+[e ( _lcd_dwr (1 -> -> 46 `ui `uc ]
+"95
+[; ;Master_Lab_5.c: 95:     LCD_POINT(2,14);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
+"96
+[; ;Master_Lab_5.c: 96:     lcd_dwr('V');
+[e ( _lcd_dwr (1 -> -> 86 `ui `uc ]
+"98
+[; ;Master_Lab_5.c: 98:     while (1){
+[e :U 140 ]
+{
+"102
+[; ;Master_Lab_5.c: 102:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"103
+[; ;Master_Lab_5.c: 103:         I2C_Master_Write(0x31);
+[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
+"104
+[; ;Master_Lab_5.c: 104:         Val_POT = I2C_Master_Read(0);
+[e = _Val_POT -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"105
+[; ;Master_Lab_5.c: 105:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"106
+[; ;Master_Lab_5.c: 106:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"110
+[; ;Master_Lab_5.c: 110:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"111
+[; ;Master_Lab_5.c: 111:         I2C_Master_Write(0x61);
+[e ( _I2C_Master_Write (1 -> -> 97 `i `ui ]
+"112
+[; ;Master_Lab_5.c: 112:         Val_CONT = I2C_Master_Read(0);
+[e = _Val_CONT -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"113
+[; ;Master_Lab_5.c: 113:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"114
+[; ;Master_Lab_5.c: 114:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"118
+[; ;Master_Lab_5.c: 118:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"119
+[; ;Master_Lab_5.c: 119:         I2C_Master_Write(0x91);
+[e ( _I2C_Master_Write (1 -> -> 145 `i `ui ]
+"120
+[; ;Master_Lab_5.c: 120:         Val_RES = I2C_Master_Read(0);
+[e = _Val_RES -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"121
+[; ;Master_Lab_5.c: 121:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"122
+[; ;Master_Lab_5.c: 122:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"126
+[; ;Master_Lab_5.c: 126:         ADC_POT_V = (float)((Val_POT)/((float)51));
+[e = _ADC_POT_V / -> -> _Val_POT `i `f -> -> 51 `i `f ]
+"127
+[; ;Master_Lab_5.c: 127:         ADC_RES_V = (float)((Val_RES)/((float)51));
+[e = _ADC_RES_V / -> -> _Val_RES `i `f -> -> 51 `i `f ]
+"131
+[; ;Master_Lab_5.c: 131:         POT_cien = (float)((ADC_POT_V)*((float)100));
+[e = _POT_cien * _ADC_POT_V -> -> 100 `i `f ]
+"132
+[; ;Master_Lab_5.c: 132:         DECI_1_POT = (uint16_t)(POT_cien);
+[e = _DECI_1_POT -> _POT_cien `ui ]
+"133
+[; ;Master_Lab_5.c: 133:         POT_D2 = (uint8_t)((DECI_1_POT)%((uint8_t)10));
+[e = _POT_D2 -> % _DECI_1_POT -> -> -> 10 `i `uc `ui `uc ]
+"135
+[; ;Master_Lab_5.c: 135:         DECI_2_POT = (uint16_t)((DECI_1_POT)/((uint16_t)10));
+[e = _DECI_2_POT / _DECI_1_POT -> -> 10 `i `ui ]
+"136
+[; ;Master_Lab_5.c: 136:         POT_D1 = (uint8_t)((DECI_2_POT)%((uint8_t)10));
+[e = _POT_D1 -> % _DECI_2_POT -> -> -> 10 `i `uc `ui `uc ]
+"138
+[; ;Master_Lab_5.c: 138:         POT_EN = (uint16_t)(ADC_POT_V);
+[e = _POT_EN -> -> _ADC_POT_V `ui `uc ]
+"142
+[; ;Master_Lab_5.c: 142:         LCD_POINT(2,0);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"143
+[; ;Master_Lab_5.c: 143:         lcd_dwr(Val_STR(POT_EN));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _POT_EN ]
+"145
+[; ;Master_Lab_5.c: 145:         LCD_POINT(2,2);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
+"146
+[; ;Master_Lab_5.c: 146:         lcd_dwr(Val_STR(POT_D1));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _POT_D1 ]
+"148
+[; ;Master_Lab_5.c: 148:         LCD_POINT(2,3);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
+"149
+[; ;Master_Lab_5.c: 149:         lcd_dwr(Val_STR(POT_D2));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _POT_D2 ]
+"153
+[; ;Master_Lab_5.c: 153:         LCD_POINT(2,6);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+"154
+[; ;Master_Lab_5.c: 154:         lcd_dwr(Val_STR(CONT_C));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _CONT_C ]
+"156
+[; ;Master_Lab_5.c: 156:         LCD_POINT(2,7);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+"157
+[; ;Master_Lab_5.c: 157:         lcd_dwr(Val_STR(CONT_D));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _CONT_D ]
+"159
+[; ;Master_Lab_5.c: 159:         LCD_POINT(2,8);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
+"160
+[; ;Master_Lab_5.c: 160:         lcd_dwr(Val_STR(CONT_U));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _CONT_U ]
+"164
+[; ;Master_Lab_5.c: 164:         RES_cien = (float)((ADC_RES_V)*((float)100));
+[e = _RES_cien * _ADC_RES_V -> -> 100 `i `f ]
+"165
+[; ;Master_Lab_5.c: 165:         DECI_1_RES = (uint16_t)(RES_cien);
+[e = _DECI_1_RES -> _RES_cien `ui ]
+"166
+[; ;Master_Lab_5.c: 166:         RES_D2 = (uint8_t)((DECI_1_RES)%((uint8_t)10));
+[e = _RES_D2 -> % _DECI_1_RES -> -> -> 10 `i `uc `ui `uc ]
+"168
+[; ;Master_Lab_5.c: 168:         DECI_2_RES = (uint16_t)((DECI_1_RES)/((uint16_t)10));
+[e = _DECI_2_RES / _DECI_1_RES -> -> 10 `i `ui ]
+"169
+[; ;Master_Lab_5.c: 169:         RES_D1 = (uint8_t)((DECI_2_RES)%((uint8_t)10));
+[e = _RES_D1 -> % _DECI_2_RES -> -> -> 10 `i `uc `ui `uc ]
+"171
+[; ;Master_Lab_5.c: 171:         RES_EN = (uint16_t)(ADC_RES_V);
+[e = _RES_EN -> -> _ADC_RES_V `ui `uc ]
+"175
+[; ;Master_Lab_5.c: 175:         LCD_POINT(2,10);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 10 `i `uc ]
+"176
+[; ;Master_Lab_5.c: 176:         lcd_dwr(Val_STR(RES_EN));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _RES_EN ]
+"178
+[; ;Master_Lab_5.c: 178:         LCD_POINT(2,12);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
+"179
+[; ;Master_Lab_5.c: 179:         lcd_dwr(Val_STR(RES_D1));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _RES_D1 ]
+"181
+[; ;Master_Lab_5.c: 181:         LCD_POINT(2,13);
+[e ( _LCD_POINT (2 , -> -> 2 `i `uc -> -> 13 `i `uc ]
+"182
+[; ;Master_Lab_5.c: 182:         lcd_dwr(Val_STR(RES_D2));
+[e ( _lcd_dwr (1 ( _Val_STR (1 _RES_D2 ]
+"183
+[; ;Master_Lab_5.c: 183:     }
+}
+[e :U 139 ]
+[e $U 140  ]
+[e :U 141 ]
+"184
+[; ;Master_Lab_5.c: 184:     return;
+[e $UE 138  ]
+"185
+[; ;Master_Lab_5.c: 185: }
 [e :UE 138 ]
 }
-"76
-[; ;Master_Lab_5.c: 76: void init(void){
+"189
+[; ;Master_Lab_5.c: 189: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"77
-[; ;Master_Lab_5.c: 77:     TRISA = 0;
+"190
+[; ;Master_Lab_5.c: 190:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"78
-[; ;Master_Lab_5.c: 78:     TRISB = 0;
+"191
+[; ;Master_Lab_5.c: 191:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"79
-[; ;Master_Lab_5.c: 79:     TRISC = 0;
+"192
+[; ;Master_Lab_5.c: 192:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"80
-[; ;Master_Lab_5.c: 80:     TRISD = 0;
+"193
+[; ;Master_Lab_5.c: 193:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"81
-[; ;Master_Lab_5.c: 81:     ANSEL = 0;
+"194
+[; ;Master_Lab_5.c: 194:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"82
-[; ;Master_Lab_5.c: 82:     ANSELH = 0;
+"195
+[; ;Master_Lab_5.c: 195:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"83
-[; ;Master_Lab_5.c: 83:     I2C_Master_Init(100000);
+"196
+[; ;Master_Lab_5.c: 196:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"87
-[; ;Master_Lab_5.c: 87: }
-[e :UE 139 ]
+"197
+[; ;Master_Lab_5.c: 197: }
+[e :UE 142 ]
 }
-"93
-[; ;Master_Lab_5.c: 93: uint8_t Val_STR(uint8_t num){
+"202
+[; ;Master_Lab_5.c: 202: uint8_t Val_STR(uint8_t num){
 [v _Val_STR `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Val_STR ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-"94
-[; ;Master_Lab_5.c: 94:     switch(num){
-[e $U 142  ]
+"203
+[; ;Master_Lab_5.c: 203:     switch(num){
+[e $U 145  ]
 {
-"95
-[; ;Master_Lab_5.c: 95:         case 0:
-[e :U 143 ]
-"96
-[; ;Master_Lab_5.c: 96:             return '0';
-[e ) -> -> 48 `ui `uc ]
-[e $UE 140  ]
-"98
-[; ;Master_Lab_5.c: 98:         case 1:
-[e :U 144 ]
-"99
-[; ;Master_Lab_5.c: 99:             return '1';
-[e ) -> -> 49 `ui `uc ]
-[e $UE 140  ]
-"101
-[; ;Master_Lab_5.c: 101:         case 2:
-[e :U 145 ]
-"102
-[; ;Master_Lab_5.c: 102:             return '2';
-[e ) -> -> 50 `ui `uc ]
-[e $UE 140  ]
-"104
-[; ;Master_Lab_5.c: 104:         case 3:
+"204
+[; ;Master_Lab_5.c: 204:         case 0:
 [e :U 146 ]
-"105
-[; ;Master_Lab_5.c: 105:             return '3';
-[e ) -> -> 51 `ui `uc ]
-[e $UE 140  ]
-"107
-[; ;Master_Lab_5.c: 107:         case 4:
+"205
+[; ;Master_Lab_5.c: 205:             return '0';
+[e ) -> -> 48 `ui `uc ]
+[e $UE 143  ]
+"207
+[; ;Master_Lab_5.c: 207:         case 1:
 [e :U 147 ]
-"108
-[; ;Master_Lab_5.c: 108:             return '4';
-[e ) -> -> 52 `ui `uc ]
-[e $UE 140  ]
-"110
-[; ;Master_Lab_5.c: 110:         case 5:
+"208
+[; ;Master_Lab_5.c: 208:             return '1';
+[e ) -> -> 49 `ui `uc ]
+[e $UE 143  ]
+"210
+[; ;Master_Lab_5.c: 210:         case 2:
 [e :U 148 ]
-"111
-[; ;Master_Lab_5.c: 111:             return '5';
-[e ) -> -> 53 `ui `uc ]
-[e $UE 140  ]
-"113
-[; ;Master_Lab_5.c: 113:         case 6:
+"211
+[; ;Master_Lab_5.c: 211:             return '2';
+[e ) -> -> 50 `ui `uc ]
+[e $UE 143  ]
+"213
+[; ;Master_Lab_5.c: 213:         case 3:
 [e :U 149 ]
-"114
-[; ;Master_Lab_5.c: 114:             return '6';
-[e ) -> -> 54 `ui `uc ]
-[e $UE 140  ]
-"116
-[; ;Master_Lab_5.c: 116:         case 7:
+"214
+[; ;Master_Lab_5.c: 214:             return '3';
+[e ) -> -> 51 `ui `uc ]
+[e $UE 143  ]
+"216
+[; ;Master_Lab_5.c: 216:         case 4:
 [e :U 150 ]
-"117
-[; ;Master_Lab_5.c: 117:             return '7';
-[e ) -> -> 55 `ui `uc ]
-[e $UE 140  ]
-"119
-[; ;Master_Lab_5.c: 119:         case 8:
+"217
+[; ;Master_Lab_5.c: 217:             return '4';
+[e ) -> -> 52 `ui `uc ]
+[e $UE 143  ]
+"219
+[; ;Master_Lab_5.c: 219:         case 5:
 [e :U 151 ]
-"120
-[; ;Master_Lab_5.c: 120:             return '8';
-[e ) -> -> 56 `ui `uc ]
-[e $UE 140  ]
-"122
-[; ;Master_Lab_5.c: 122:         case 9:
+"220
+[; ;Master_Lab_5.c: 220:             return '5';
+[e ) -> -> 53 `ui `uc ]
+[e $UE 143  ]
+"222
+[; ;Master_Lab_5.c: 222:         case 6:
 [e :U 152 ]
-"123
-[; ;Master_Lab_5.c: 123:             return '9';
+"223
+[; ;Master_Lab_5.c: 223:             return '6';
+[e ) -> -> 54 `ui `uc ]
+[e $UE 143  ]
+"225
+[; ;Master_Lab_5.c: 225:         case 7:
+[e :U 153 ]
+"226
+[; ;Master_Lab_5.c: 226:             return '7';
+[e ) -> -> 55 `ui `uc ]
+[e $UE 143  ]
+"228
+[; ;Master_Lab_5.c: 228:         case 8:
+[e :U 154 ]
+"229
+[; ;Master_Lab_5.c: 229:             return '8';
+[e ) -> -> 56 `ui `uc ]
+[e $UE 143  ]
+"231
+[; ;Master_Lab_5.c: 231:         case 9:
+[e :U 155 ]
+"232
+[; ;Master_Lab_5.c: 232:             return '9';
 [e ) -> -> 57 `ui `uc ]
-[e $UE 140  ]
-"125
-[; ;Master_Lab_5.c: 125:     }
+[e $UE 143  ]
+"234
+[; ;Master_Lab_5.c: 234:     }
 }
-[e $U 141  ]
-[e :U 142 ]
-[e [\ -> _num `i , $ -> 0 `i 143
- , $ -> 1 `i 144
- , $ -> 2 `i 145
- , $ -> 3 `i 146
- , $ -> 4 `i 147
- , $ -> 5 `i 148
- , $ -> 6 `i 149
- , $ -> 7 `i 150
- , $ -> 8 `i 151
- , $ -> 9 `i 152
- 141 ]
-[e :U 141 ]
-"126
-[; ;Master_Lab_5.c: 126: }
-[e :UE 140 ]
+[e $U 144  ]
+[e :U 145 ]
+[e [\ -> _num `i , $ -> 0 `i 146
+ , $ -> 1 `i 147
+ , $ -> 2 `i 148
+ , $ -> 3 `i 149
+ , $ -> 4 `i 150
+ , $ -> 5 `i 151
+ , $ -> 6 `i 152
+ , $ -> 7 `i 153
+ , $ -> 8 `i 154
+ , $ -> 9 `i 155
+ 144 ]
+[e :U 144 ]
+"235
+[; ;Master_Lab_5.c: 235: }
+[e :UE 143 ]
 }
 [a 3C 83 51 0 ]
 [a 2C 83 50 0 ]
