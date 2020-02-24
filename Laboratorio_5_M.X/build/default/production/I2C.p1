@@ -288,226 +288,226 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"7 ../SlaveADC_Lab_5.X/I2C.c
-[; ;../SlaveADC_Lab_5.X/I2C.c: 7: void I2C_Master_Init(const unsigned long c)
+"7 I2C.c
+[; ;I2C.c: 7: void I2C_Master_Init(const unsigned long c)
 [v _I2C_Master_Init `(v ~T0 @X0 1 ef1`Cul ]
 "8
-[; ;../SlaveADC_Lab_5.X/I2C.c: 8: {
+[; ;I2C.c: 8: {
 {
 [e :U _I2C_Master_Init ]
 "7
-[; ;../SlaveADC_Lab_5.X/I2C.c: 7: void I2C_Master_Init(const unsigned long c)
+[; ;I2C.c: 7: void I2C_Master_Init(const unsigned long c)
 [v _c `Cul ~T0 @X0 1 r1 ]
 "8
-[; ;../SlaveADC_Lab_5.X/I2C.c: 8: {
+[; ;I2C.c: 8: {
 [f ]
 "9
-[; ;../SlaveADC_Lab_5.X/I2C.c: 9:     SSPCON = 0b00101000;
+[; ;I2C.c: 9:     SSPCON = 0b00101000;
 [e = _SSPCON -> -> 40 `i `uc ]
 "10
-[; ;../SlaveADC_Lab_5.X/I2C.c: 10:     SSPCON2 = 0;
+[; ;I2C.c: 10:     SSPCON2 = 0;
 [e = _SSPCON2 -> -> 0 `i `uc ]
 "11
-[; ;../SlaveADC_Lab_5.X/I2C.c: 11:     SSPADD = (8000000/(4*c))-1;
+[; ;I2C.c: 11:     SSPADD = (8000000/(4*c))-1;
 [e = _SSPADD -> - / -> -> 8000000 `l `ul * -> -> -> 4 `i `l `ul _c -> -> -> 1 `i `l `ul `uc ]
 "12
-[; ;../SlaveADC_Lab_5.X/I2C.c: 12:     SSPSTAT = 0;
+[; ;I2C.c: 12:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
 "13
-[; ;../SlaveADC_Lab_5.X/I2C.c: 13:     TRISCbits.TRISC3 = 1;
+[; ;I2C.c: 13:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
 "14
-[; ;../SlaveADC_Lab_5.X/I2C.c: 14:     TRISCbits.TRISC4 = 1;
+[; ;I2C.c: 14:     TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "15
-[; ;../SlaveADC_Lab_5.X/I2C.c: 15: }
+[; ;I2C.c: 15: }
 [e :UE 138 ]
 }
 "23
-[; ;../SlaveADC_Lab_5.X/I2C.c: 23: void I2C_Master_Wait()
+[; ;I2C.c: 23: void I2C_Master_Wait()
 [v _I2C_Master_Wait `(v ~T0 @X0 1 ef ]
 "24
-[; ;../SlaveADC_Lab_5.X/I2C.c: 24: {
+[; ;I2C.c: 24: {
 {
 [e :U _I2C_Master_Wait ]
 [f ]
 "25
-[; ;../SlaveADC_Lab_5.X/I2C.c: 25:     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+[; ;I2C.c: 25:     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
 [e $U 140  ]
 [e :U 141 ]
 [e :U 140 ]
 [e $ || != & -> _SSPSTAT `i -> 4 `i -> 0 `i != & -> _SSPCON2 `i -> 31 `i -> 0 `i 141  ]
 [e :U 142 ]
 "26
-[; ;../SlaveADC_Lab_5.X/I2C.c: 26: }
+[; ;I2C.c: 26: }
 [e :UE 139 ]
 }
 "30
-[; ;../SlaveADC_Lab_5.X/I2C.c: 30: void I2C_Master_Start()
+[; ;I2C.c: 30: void I2C_Master_Start()
 [v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
 "31
-[; ;../SlaveADC_Lab_5.X/I2C.c: 31: {
+[; ;I2C.c: 31: {
 {
 [e :U _I2C_Master_Start ]
 [f ]
 "32
-[; ;../SlaveADC_Lab_5.X/I2C.c: 32:     I2C_Master_Wait();
+[; ;I2C.c: 32:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "33
-[; ;../SlaveADC_Lab_5.X/I2C.c: 33:     SSPCON2bits.SEN = 1;
+[; ;I2C.c: 33:     SSPCON2bits.SEN = 1;
 [e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
 "34
-[; ;../SlaveADC_Lab_5.X/I2C.c: 34: }
+[; ;I2C.c: 34: }
 [e :UE 143 ]
 }
 "38
-[; ;../SlaveADC_Lab_5.X/I2C.c: 38: void I2C_Master_RepeatedStart()
+[; ;I2C.c: 38: void I2C_Master_RepeatedStart()
 [v _I2C_Master_RepeatedStart `(v ~T0 @X0 1 ef ]
 "39
-[; ;../SlaveADC_Lab_5.X/I2C.c: 39: {
+[; ;I2C.c: 39: {
 {
 [e :U _I2C_Master_RepeatedStart ]
 [f ]
 "40
-[; ;../SlaveADC_Lab_5.X/I2C.c: 40:     I2C_Master_Wait();
+[; ;I2C.c: 40:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "41
-[; ;../SlaveADC_Lab_5.X/I2C.c: 41:     SSPCON2bits.RSEN = 1;
+[; ;I2C.c: 41:     SSPCON2bits.RSEN = 1;
 [e = . . _SSPCON2bits 0 1 -> -> 1 `i `uc ]
 "42
-[; ;../SlaveADC_Lab_5.X/I2C.c: 42: }
+[; ;I2C.c: 42: }
 [e :UE 144 ]
 }
 "46
-[; ;../SlaveADC_Lab_5.X/I2C.c: 46: void I2C_Master_Stop()
+[; ;I2C.c: 46: void I2C_Master_Stop()
 [v _I2C_Master_Stop `(v ~T0 @X0 1 ef ]
 "47
-[; ;../SlaveADC_Lab_5.X/I2C.c: 47: {
+[; ;I2C.c: 47: {
 {
 [e :U _I2C_Master_Stop ]
 [f ]
 "48
-[; ;../SlaveADC_Lab_5.X/I2C.c: 48:     I2C_Master_Wait();
+[; ;I2C.c: 48:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "49
-[; ;../SlaveADC_Lab_5.X/I2C.c: 49:     SSPCON2bits.PEN = 1;
+[; ;I2C.c: 49:     SSPCON2bits.PEN = 1;
 [e = . . _SSPCON2bits 0 2 -> -> 1 `i `uc ]
 "50
-[; ;../SlaveADC_Lab_5.X/I2C.c: 50: }
+[; ;I2C.c: 50: }
 [e :UE 145 ]
 }
 "56
-[; ;../SlaveADC_Lab_5.X/I2C.c: 56: void I2C_Master_Write(unsigned d)
+[; ;I2C.c: 56: void I2C_Master_Write(unsigned d)
 [v _I2C_Master_Write `(v ~T0 @X0 1 ef1`ui ]
 "57
-[; ;../SlaveADC_Lab_5.X/I2C.c: 57: {
+[; ;I2C.c: 57: {
 {
 [e :U _I2C_Master_Write ]
 "56
-[; ;../SlaveADC_Lab_5.X/I2C.c: 56: void I2C_Master_Write(unsigned d)
+[; ;I2C.c: 56: void I2C_Master_Write(unsigned d)
 [v _d `ui ~T0 @X0 1 r1 ]
 "57
-[; ;../SlaveADC_Lab_5.X/I2C.c: 57: {
+[; ;I2C.c: 57: {
 [f ]
 "58
-[; ;../SlaveADC_Lab_5.X/I2C.c: 58:     I2C_Master_Wait();
+[; ;I2C.c: 58:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "59
-[; ;../SlaveADC_Lab_5.X/I2C.c: 59:     SSPBUF = d;
+[; ;I2C.c: 59:     SSPBUF = d;
 [e = _SSPBUF -> _d `uc ]
 "60
-[; ;../SlaveADC_Lab_5.X/I2C.c: 60: }
+[; ;I2C.c: 60: }
 [e :UE 146 ]
 }
 "65
-[; ;../SlaveADC_Lab_5.X/I2C.c: 65: unsigned short I2C_Master_Read(unsigned short a)
+[; ;I2C.c: 65: unsigned short I2C_Master_Read(unsigned short a)
 [v _I2C_Master_Read `(us ~T0 @X0 1 ef1`us ]
 "66
-[; ;../SlaveADC_Lab_5.X/I2C.c: 66: {
+[; ;I2C.c: 66: {
 {
 [e :U _I2C_Master_Read ]
 "65
-[; ;../SlaveADC_Lab_5.X/I2C.c: 65: unsigned short I2C_Master_Read(unsigned short a)
+[; ;I2C.c: 65: unsigned short I2C_Master_Read(unsigned short a)
 [v _a `us ~T0 @X0 1 r1 ]
 "66
-[; ;../SlaveADC_Lab_5.X/I2C.c: 66: {
+[; ;I2C.c: 66: {
 [f ]
 "67
-[; ;../SlaveADC_Lab_5.X/I2C.c: 67:     unsigned short temp;
+[; ;I2C.c: 67:     unsigned short temp;
 [v _temp `us ~T0 @X0 1 a ]
 "68
-[; ;../SlaveADC_Lab_5.X/I2C.c: 68:     I2C_Master_Wait();
+[; ;I2C.c: 68:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "69
-[; ;../SlaveADC_Lab_5.X/I2C.c: 69:     SSPCON2bits.RCEN = 1;
+[; ;I2C.c: 69:     SSPCON2bits.RCEN = 1;
 [e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
 "70
-[; ;../SlaveADC_Lab_5.X/I2C.c: 70:     I2C_Master_Wait();
+[; ;I2C.c: 70:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "71
-[; ;../SlaveADC_Lab_5.X/I2C.c: 71:     temp = SSPBUF;
+[; ;I2C.c: 71:     temp = SSPBUF;
 [e = _temp -> _SSPBUF `us ]
 "72
-[; ;../SlaveADC_Lab_5.X/I2C.c: 72:     I2C_Master_Wait();
+[; ;I2C.c: 72:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "78
-[; ;../SlaveADC_Lab_5.X/I2C.c: 78:     SSPCON2bits.ACKDT = (a)?0:1;
+[; ;I2C.c: 78:     SSPCON2bits.ACKDT = (a)?0:1;
 [e = . . _SSPCON2bits 0 5 -> ? != -> _a `ui -> -> 0 `i `ui : -> 0 `i -> 1 `i `uc ]
 "79
-[; ;../SlaveADC_Lab_5.X/I2C.c: 79:     SSPCON2bits.ACKEN = 1;
+[; ;I2C.c: 79:     SSPCON2bits.ACKEN = 1;
 [e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
 "80
-[; ;../SlaveADC_Lab_5.X/I2C.c: 80:     return temp;
+[; ;I2C.c: 80:     return temp;
 [e ) _temp ]
 [e $UE 147  ]
 "81
-[; ;../SlaveADC_Lab_5.X/I2C.c: 81: }
+[; ;I2C.c: 81: }
 [e :UE 147 ]
 }
 "85
-[; ;../SlaveADC_Lab_5.X/I2C.c: 85: void I2C_Slave_Init(uint8_t address)
+[; ;I2C.c: 85: void I2C_Slave_Init(uint8_t address)
 [v _I2C_Slave_Init `(v ~T0 @X0 1 ef1`uc ]
 "86
-[; ;../SlaveADC_Lab_5.X/I2C.c: 86: {
+[; ;I2C.c: 86: {
 {
 [e :U _I2C_Slave_Init ]
 "85
-[; ;../SlaveADC_Lab_5.X/I2C.c: 85: void I2C_Slave_Init(uint8_t address)
+[; ;I2C.c: 85: void I2C_Slave_Init(uint8_t address)
 [v _address `uc ~T0 @X0 1 r1 ]
 "86
-[; ;../SlaveADC_Lab_5.X/I2C.c: 86: {
+[; ;I2C.c: 86: {
 [f ]
 "87
-[; ;../SlaveADC_Lab_5.X/I2C.c: 87:     SSPADD = address;
+[; ;I2C.c: 87:     SSPADD = address;
 [e = _SSPADD _address ]
 "88
-[; ;../SlaveADC_Lab_5.X/I2C.c: 88:     SSPCON = 0x36;
+[; ;I2C.c: 88:     SSPCON = 0x36;
 [e = _SSPCON -> -> 54 `i `uc ]
 "89
-[; ;../SlaveADC_Lab_5.X/I2C.c: 89:     SSPSTAT = 0x80;
+[; ;I2C.c: 89:     SSPSTAT = 0x80;
 [e = _SSPSTAT -> -> 128 `i `uc ]
 "90
-[; ;../SlaveADC_Lab_5.X/I2C.c: 90:     SSPCON2 = 0x01;
+[; ;I2C.c: 90:     SSPCON2 = 0x01;
 [e = _SSPCON2 -> -> 1 `i `uc ]
 "91
-[; ;../SlaveADC_Lab_5.X/I2C.c: 91:     TRISC3 = 1;
+[; ;I2C.c: 91:     TRISC3 = 1;
 [e = _TRISC3 -> -> 1 `i `b ]
 "92
-[; ;../SlaveADC_Lab_5.X/I2C.c: 92:     TRISC4 = 1;
+[; ;I2C.c: 92:     TRISC4 = 1;
 [e = _TRISC4 -> -> 1 `i `b ]
 "93
-[; ;../SlaveADC_Lab_5.X/I2C.c: 93:     GIE = 1;
+[; ;I2C.c: 93:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
 "94
-[; ;../SlaveADC_Lab_5.X/I2C.c: 94:     PEIE = 1;
+[; ;I2C.c: 94:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
 "95
-[; ;../SlaveADC_Lab_5.X/I2C.c: 95:     SSPIF = 0;
+[; ;I2C.c: 95:     SSPIF = 0;
 [e = _SSPIF -> -> 0 `i `b ]
 "96
-[; ;../SlaveADC_Lab_5.X/I2C.c: 96:     SSPIE = 1;
+[; ;I2C.c: 96:     SSPIE = 1;
 [e = _SSPIE -> -> 1 `i `b ]
 "97
-[; ;../SlaveADC_Lab_5.X/I2C.c: 97: }
+[; ;I2C.c: 97: }
 [e :UE 148 ]
 }

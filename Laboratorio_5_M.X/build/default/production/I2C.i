@@ -1,4 +1,4 @@
-# 1 "../SlaveADC_Lab_5.X/I2C.c"
+# 1 "I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "../SlaveADC_Lab_5.X/I2C.c" 2
+# 1 "I2C.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -140,7 +140,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 1 "../SlaveADC_Lab_5.X/I2C.c" 2
+# 1 "I2C.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic16f887.h" 1 3
 # 44 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic16f887.h" 3
@@ -2553,10 +2553,10 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 2 "../SlaveADC_Lab_5.X/I2C.c" 2
+# 2 "I2C.c" 2
 
-# 1 "../SlaveADC_Lab_5.X/I2C.h" 1
-# 15 "../SlaveADC_Lab_5.X/I2C.h"
+# 1 "./I2C.h" 1
+# 15 "./I2C.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2628,8 +2628,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 15 "../SlaveADC_Lab_5.X/I2C.h" 2
-# 25 "../SlaveADC_Lab_5.X/I2C.h"
+# 15 "./I2C.h" 2
+# 25 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2666,7 +2666,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 3 "../SlaveADC_Lab_5.X/I2C.c" 2
+# 3 "I2C.c" 2
 
 
 

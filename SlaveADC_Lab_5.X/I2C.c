@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <pic16f887.h>
 #include "I2C.h"
 //*****************************************************************************
 // Función para inicializar I2C Maestro
@@ -69,11 +70,12 @@ unsigned short I2C_Master_Read(unsigned short a)
     I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
     temp = SSPBUF;
     I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    if(a == 1){
+    /*if(a == 1){
         SSPCON2bits.ACKDT = 0;
     }else{
         SSPCON2bits.ACKDT = 1;
-    }
+    }*/
+    SSPCON2bits.ACKDT = (a)?0:1;
     SSPCON2bits.ACKEN = 1;          // Iniciar sequencia de Acknowledge
     return temp;                    // Regresar valor del dato leído
 }

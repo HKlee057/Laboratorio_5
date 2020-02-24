@@ -166,7 +166,7 @@ config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 7C COMMON 70 1
 %locals
 dist/default/production\SlaveCONT_Lab_5.X.production.o
-C:\Users\hecto\AppData\Local\Temp\sbm8.s
+C:\Users\hecto\AppData\Local\Temp\scto.s
 810 F 0 CODE 0
 813 F 0 CODE 0
 836 F 0 CODE 0
@@ -267,18 +267,18 @@ D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LE
 147 169 0 CODE 0
 149 16F 0 CODE 0
 ../SlaveADC_Lab_5.X/I2C.c
-83 144 0 CODE 0
-85 145 0 CODE 0
-86 149 0 CODE 0
-87 14D 0 CODE 0
-88 151 0 CODE 0
-89 153 0 CODE 0
-90 154 0 CODE 0
-91 155 0 CODE 0
-92 156 0 CODE 0
-93 157 0 CODE 0
-94 15A 0 CODE 0
-95 15D 0 CODE 0
+85 144 0 CODE 0
+87 145 0 CODE 0
+88 149 0 CODE 0
+89 14D 0 CODE 0
+90 151 0 CODE 0
+91 153 0 CODE 0
+92 154 0 CODE 0
+93 155 0 CODE 0
+94 156 0 CODE 0
+95 157 0 CODE 0
+96 15A 0 CODE 0
+97 15D 0 CODE 0
 D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 59 83 0 CODE 0
 61 83 0 CODE 0

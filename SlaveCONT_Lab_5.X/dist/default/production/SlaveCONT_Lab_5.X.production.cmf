@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\hecto\AppData\Local\Temp\sbm8.o
+$C:\Users\hecto\AppData\Local\Temp\scto.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -71,16 +71,16 @@ STRING 170-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SlaveCONT_Lab_5.X.production.o
-F cinit CODE >810:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-F cinit CODE >813:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-F cinit CODE >836:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-10 cinit CODE >837:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-11 cinit CODE >838:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-12 cinit CODE >839:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-13 cinit CODE >840:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-14 cinit CODE >846:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-14 cinit CODE >848:C:\Users\hecto\AppData\Local\Temp\sbm8.s
-15 cinit CODE >849:C:\Users\hecto\AppData\Local\Temp\sbm8.s
+F cinit CODE >810:C:\Users\hecto\AppData\Local\Temp\scto.s
+F cinit CODE >813:C:\Users\hecto\AppData\Local\Temp\scto.s
+F cinit CODE >836:C:\Users\hecto\AppData\Local\Temp\scto.s
+10 cinit CODE >837:C:\Users\hecto\AppData\Local\Temp\scto.s
+11 cinit CODE >838:C:\Users\hecto\AppData\Local\Temp\scto.s
+12 cinit CODE >839:C:\Users\hecto\AppData\Local\Temp\scto.s
+13 cinit CODE >840:C:\Users\hecto\AppData\Local\Temp\scto.s
+14 cinit CODE >846:C:\Users\hecto\AppData\Local\Temp\scto.s
+14 cinit CODE >848:C:\Users\hecto\AppData\Local\Temp\scto.s
+15 cinit CODE >849:C:\Users\hecto\AppData\Local\Temp\scto.s
 4 intentry CODE >59:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 83 text4 CODE >59:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 83 text4 CODE >61:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
@@ -107,18 +107,18 @@ D8 text4 CODE >86:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/S
 DE text4 CODE >87:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 DE text4 CODE >89:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 E1 text4 CODE >91:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
-144 text3 CODE >83:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-145 text3 CODE >85:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-149 text3 CODE >86:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-14D text3 CODE >87:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-151 text3 CODE >88:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-153 text3 CODE >89:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-154 text3 CODE >90:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-155 text3 CODE >91:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-156 text3 CODE >92:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-157 text3 CODE >93:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-15A text3 CODE >94:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
-15D text3 CODE >95:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+144 text3 CODE >85:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+145 text3 CODE >87:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+149 text3 CODE >88:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+14D text3 CODE >89:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+151 text3 CODE >90:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+153 text3 CODE >91:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+154 text3 CODE >92:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+155 text3 CODE >93:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+156 text3 CODE >94:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+157 text3 CODE >95:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+15A text3 CODE >96:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
+15D text3 CODE >97:C:\Users\hecto\Documents\GitHub\Laboratorio_5/SlaveADC_Lab_5.X/I2C.c
 15E text2 CODE >140:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 15E text2 CODE >141:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
 161 text2 CODE >142:D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c
@@ -228,22 +228,22 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _BF 4A0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\sbm8.o
+___sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\scto.o
 _init 2BC 0 CODE 0 text2 dist/default/production\SlaveCONT_Lab_5.X.production.o
 _main 30 0 CODE 0 maintext dist/default/production\SlaveCONT_Lab_5.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
-start 18 0 CODE 0 init C:\Users\hecto\AppData\Local\Temp\sbm8.o
+start 18 0 CODE 0 init C:\Users\hecto\AppData\Local\Temp\scto.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __size_of_init 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\sbm8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\sbm8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\sbm8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\sbm8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\sbm8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\sbm8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\scto.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\scto.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\scto.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\scto.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\scto.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\scto.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
@@ -254,8 +254,8 @@ _SSPCONbits 14 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __size_of_initOsc 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 _add_button 7C 0 COMMON 1 bssCOMMON dist/default/production\SlaveCONT_Lab_5.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\sbm8.o
-___stacklo 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\sbm8.o
+___stackhi 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\scto.o
+___stacklo 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\scto.o
 _I2C_Slave_Init 288 0 CODE 0 text3 dist/default/production\SlaveCONT_Lab_5.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
@@ -268,7 +268,7 @@ _TRISC3 43B 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 _sub_button 7B 0 COMMON 1 bssCOMMON dist/default/production\SlaveCONT_Lab_5.X.production.o
 __end_of_initOsc 288 0 CODE 0 text1 dist/default/production\SlaveCONT_Lab_5.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\sbm8.o
+___int_sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\scto.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -316,7 +316,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\SlaveCONT_Lab_5.X.production.o
 __end_of_isr 1D0 0 CODE 0 text4 dist/default/production\SlaveCONT_Lab_5.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\hecto\AppData\Local\Temp\sbm8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\hecto\AppData\Local\Temp\scto.o
 initOsc@frec 75 0 COMMON 1 cstackCOMMON dist/default/production\SlaveCONT_Lab_5.X.production.o
 __pmaintext 30 0 CODE 0 maintext dist/default/production\SlaveCONT_Lab_5.X.production.o
 __Lcommon 0 0 ABS 0 common -

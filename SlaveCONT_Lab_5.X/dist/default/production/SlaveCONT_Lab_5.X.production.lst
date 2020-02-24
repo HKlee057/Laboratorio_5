@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sun Feb 23 18:35:29 2020
+                                                                                               Sun Feb 23 19:53:39 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -557,11 +557,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    537                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 106:     if (PORTDbits.RD2 == 1){
    538  0029  1D08               	btfss	8,2	;volatile
-   539  002A  282C               	goto	u141
-   540  002B  282D               	goto	u140
-   541  002C                     u141:	
+   539  002A  282C               	goto	u151
+   540  002B  282D               	goto	u150
+   541  002C                     u151:	
    542  002C  282F               	goto	l876
-   543  002D                     u140:	
+   543  002D                     u150:	
    544  002D                     l874:	
    545                           
    546                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -574,18 +574,18 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
       +                          .c: 109:     if (add_button==1 && PORTDbits.RD2==0){
    552  002F  037C               	decf	_add_button,w
    553  0030  1D03               	btfss	3,2
-   554  0031  2833               	goto	u151
-   555  0032  2834               	goto	u150
-   556  0033                     u151:	
+   554  0031  2833               	goto	u161
+   555  0032  2834               	goto	u160
+   556  0033                     u161:	
    557  0033  284A               	goto	l888
-   558  0034                     u150:	
+   558  0034                     u160:	
    559  0034                     l878:	
    560  0034  1908               	btfsc	8,2	;volatile
-   561  0035  2837               	goto	u161
-   562  0036  2838               	goto	u160
-   563  0037                     u161:	
+   561  0035  2837               	goto	u171
+   562  0036  2838               	goto	u170
+   563  0037                     u171:	
    564  0037  284A               	goto	l888
-   565  0038                     u160:	
+   565  0038                     u170:	
    566  0038                     l880:	
    567                           
    568                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -594,11 +594,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    570  0039  00F7               	movwf	??_main+1
    571  003A  30F8               	movlw	248
    572  003B  00F6               	movwf	??_main
-   573  003C                     u227:	
+   573  003C                     u237:	
    574  003C  0BF6               	decfsz	??_main,f
-   575  003D  283C               	goto	u227
+   575  003D  283C               	goto	u237
    576  003E  0BF7               	decfsz	??_main+1,f
-   577  003F  283C               	goto	u227
+   577  003F  283C               	goto	u237
    578  0040  0000               	nop
    579  0041                     l882:	
    580                           
@@ -628,11 +628,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    600  004A  3010               	movlw	16
    601  004B  067A               	xorwf	_count,w
    602  004C  1D03               	btfss	3,2
-   603  004D  284F               	goto	u171
-   604  004E  2850               	goto	u170
-   605  004F                     u171:	
+   603  004D  284F               	goto	u181
+   604  004E  2850               	goto	u180
+   605  004F                     u181:	
    606  004F  2853               	goto	l894
-   607  0050                     u170:	
+   607  0050                     u180:	
    608  0050                     l890:	
    609                           
    610                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -649,11 +649,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    619                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 120:     if (PORTDbits.RD3 == 1){
    620  0053  1D88               	btfss	8,3	;volatile
-   621  0054  2856               	goto	u181
-   622  0055  2857               	goto	u180
-   623  0056                     u181:	
+   621  0054  2856               	goto	u191
+   622  0055  2857               	goto	u190
+   623  0056                     u191:	
    624  0056  2859               	goto	l898
-   625  0057                     u180:	
+   625  0057                     u190:	
    626  0057                     l896:	
    627                           
    628                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -666,18 +666,18 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
       +                          .c: 123:     if (sub_button==1 && PORTDbits.RD3==0){
    634  0059  037B               	decf	_sub_button,w
    635  005A  1D03               	btfss	3,2
-   636  005B  285D               	goto	u191
-   637  005C  285E               	goto	u190
-   638  005D                     u191:	
+   636  005B  285D               	goto	u201
+   637  005C  285E               	goto	u200
+   638  005D                     u201:	
    639  005D  2874               	goto	l910
-   640  005E                     u190:	
+   640  005E                     u200:	
    641  005E                     l900:	
    642  005E  1988               	btfsc	8,3	;volatile
-   643  005F  2861               	goto	u201
-   644  0060  2862               	goto	u200
-   645  0061                     u201:	
+   643  005F  2861               	goto	u211
+   644  0060  2862               	goto	u210
+   645  0061                     u211:	
    646  0061  2874               	goto	l910
-   647  0062                     u200:	
+   647  0062                     u210:	
    648  0062                     l902:	
    649                           
    650                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -686,11 +686,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    652  0063  00F7               	movwf	??_main+1
    653  0064  30F8               	movlw	248
    654  0065  00F6               	movwf	??_main
-   655  0066                     u237:	
+   655  0066                     u247:	
    656  0066  0BF6               	decfsz	??_main,f
-   657  0067  2866               	goto	u237
+   657  0067  2866               	goto	u247
    658  0068  0BF7               	decfsz	??_main+1,f
-   659  0069  2866               	goto	u237
+   659  0069  2866               	goto	u247
    660  006A  0000               	nop
    661  006B                     l904:	
    662                           
@@ -719,11 +719,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
       +                          .c: 129:     if (count==-1){
    682  0074  0A7A               	incf	_count,w
    683  0075  1D03               	btfss	3,2
-   684  0076  2878               	goto	u211
-   685  0077  2879               	goto	u210
-   686  0078                     u211:	
+   684  0076  2878               	goto	u221
+   685  0077  2879               	goto	u220
+   686  0078                     u221:	
    687  0078  2829               	goto	l872
-   688  0079                     u210:	
+   688  0079                     u220:	
    689  0079                     l912:	
    690                           
    691                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -781,12 +781,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    741                           ; Regs used in _initOsc: [wreg-fsr0h+status,2+status,0]
    742                           ;initOsc@frec stored from wreg
    743  00E8  00F5               	movwf	initOsc@frec
-   744  00E9                     l766:	
+   744  00E9                     l764:	
    745                           
    746                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 9:     switch(frec){
-   747  00E9  2920               	goto	l770
-   748  00EA                     l146:	
+   747  00E9  2920               	goto	l768
+   748  00EA                     l144:	
    749                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 10:         case 0:
    750                           
@@ -807,8 +807,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    762                           
    763                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 14:             break;
-   764  00EF  2942               	goto	l147
-   765  00F0                     l148:	
+   764  00EF  2942               	goto	l145
+   765  00F0                     l146:	
    766                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 15:         case 1:
    767                           
@@ -829,8 +829,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    779                           
    780                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 19:             break;
-   781  00F5  2942               	goto	l147
-   782  00F6                     l149:	
+   781  00F5  2942               	goto	l145
+   782  00F6                     l147:	
    783                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 20:         case 2:
    784                           
@@ -851,8 +851,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    796                           
    797                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 24:             break;
-   798  00FB  2942               	goto	l147
-   799  00FC                     l150:	
+   798  00FB  2942               	goto	l145
+   799  00FC                     l148:	
    800                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 25:         case 3:
    801                           
@@ -873,8 +873,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    813                           
    814                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 29:             break;
-   815  0101  2942               	goto	l147
-   816  0102                     l151:	
+   815  0101  2942               	goto	l145
+   816  0102                     l149:	
    817                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 30:         case 4:
    818                           
@@ -895,8 +895,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    830                           
    831                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 34:             break;
-   832  0107  2942               	goto	l147
-   833  0108                     l152:	
+   832  0107  2942               	goto	l145
+   833  0108                     l150:	
    834                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 35:         case 5:
    835                           
@@ -917,8 +917,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    847                           
    848                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 39:             break;
-   849  010D  2942               	goto	l147
-   850  010E                     l153:	
+   849  010D  2942               	goto	l145
+   850  010E                     l151:	
    851                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 40:         case 6:
    852                           
@@ -939,8 +939,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    864                           
    865                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 44:             break;
-   866  0113  2942               	goto	l147
-   867  0114                     l154:	
+   866  0113  2942               	goto	l145
+   867  0114                     l152:	
    868                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 45:         case 7:
    869                           
@@ -961,8 +961,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    881                           
    882                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 49:             break;
-   883  0119  2942               	goto	l147
-   884  011A                     l155:	
+   883  0119  2942               	goto	l145
+   884  011A                     l153:	
    885                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 50:         default:
    886                           
@@ -983,8 +983,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    898                           
    899                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 54:             break;
-   900  011F  2942               	goto	l147
-   901  0120                     l770:	
+   900  011F  2942               	goto	l145
+   901  0120                     l768:	
    902  0120  0875               	movf	initOsc@frec,w
    903  0121  00F3               	movwf	??_initOsc
    904  0122  01F4               	clrf	??_initOsc+1
@@ -1003,7 +1003,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    916  0124  3A00               	xorlw	0	; case 0
    917  0125  1903               	skipnz
    918  0126  2928               	goto	l934
-   919  0127  291A               	goto	l155
+   919  0127  291A               	goto	l153
    920  0128                     l934:	
    921                           
    922                           ; Switch size 1, requested type "simple"
@@ -1017,35 +1017,35 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    930  0128  0873               	movf	??_initOsc,w
    931  0129  3A00               	xorlw	0	; case 0
    932  012A  1903               	skipnz
-   933  012B  28EA               	goto	l146
+   933  012B  28EA               	goto	l144
    934  012C  3A01               	xorlw	1	; case 1
    935  012D  1903               	skipnz
-   936  012E  28F0               	goto	l148
+   936  012E  28F0               	goto	l146
    937  012F  3A03               	xorlw	3	; case 2
    938  0130  1903               	skipnz
-   939  0131  28F6               	goto	l149
+   939  0131  28F6               	goto	l147
    940  0132  3A01               	xorlw	1	; case 3
    941  0133  1903               	skipnz
-   942  0134  28FC               	goto	l150
+   942  0134  28FC               	goto	l148
    943  0135  3A07               	xorlw	7	; case 4
    944  0136  1903               	skipnz
-   945  0137  2902               	goto	l151
+   945  0137  2902               	goto	l149
    946  0138  3A01               	xorlw	1	; case 5
    947  0139  1903               	skipnz
-   948  013A  2908               	goto	l152
+   948  013A  2908               	goto	l150
    949  013B  3A03               	xorlw	3	; case 6
    950  013C  1903               	skipnz
-   951  013D  290E               	goto	l153
+   951  013D  290E               	goto	l151
    952  013E  3A01               	xorlw	1	; case 7
    953  013F  1903               	skipnz
-   954  0140  2914               	goto	l154
-   955  0141  291A               	goto	l155
-   956  0142                     l147:	
+   954  0140  2914               	goto	l152
+   955  0141  291A               	goto	l153
+   956  0142                     l145:	
    957                           
    958                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
       +                          .c: 57:     OSCCONbits.SCS = 1;
    959  0142  140F               	bsf	15,0	;volatile
-   960  0143                     l156:	
+   960  0143                     l154:	
    961  0143  0008               	return
    962  0144                     __end_of_initOsc:	
    963                           
@@ -1084,7 +1084,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    996                           
    997                           ;psect for function _init
    998  015E                     _init:	
-   999  015E                     l776:	
+   999  015E                     l774:	
   1000                           ;incstack = 0
   1001                           ; Regs used in _init: [wreg+status,2+status,0+pclath+cstack]
   1002                           
@@ -1102,31 +1102,31 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1012                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 143:     TRISC = 0;
   1013  0162  0187               	clrf	7	;volatile
-  1014  0163                     l778:	
+  1014  0163                     l776:	
   1015                           
   1016                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 144:     TRISD = 0b00001100;
   1017  0163  300C               	movlw	12
   1018  0164  0088               	movwf	8	;volatile
-  1019  0165                     l780:	
+  1019  0165                     l778:	
   1020                           
   1021                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 145:     ANSEL = 0;
   1022  0165  1683               	bsf	3,5	;RP0=1, select bank3
   1023  0166  1703               	bsf	3,6	;RP1=1, select bank3
   1024  0167  0188               	clrf	8	;volatile
-  1025  0168                     l782:	
+  1025  0168                     l780:	
   1026                           
   1027                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 146:     ANSELH = 0;
   1028  0168  0189               	clrf	9	;volatile
-  1029  0169                     l784:	
+  1029  0169                     l782:	
   1030                           
   1031                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 147:     I2C_Slave_Init(0x60);
   1032  0169  3060               	movlw	96
   1033  016A  120A  118A  2144  120A  118A  	fcall	_I2C_Slave_Init
-  1034  016F                     l140:	
+  1034  016F                     l138:	
   1035  016F  0008               	return
   1036  0170                     __end_of_init:	
   1037                           
@@ -1134,7 +1134,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1039  0144                     __ptext3:	
   1040 ;; *************** function _I2C_Slave_Init *****************
   1041 ;; Defined at:
-  1042 ;;		line 83 in file "../SlaveADC_Lab_5.X/I2C.c"
+  1042 ;;		line 85 in file "../SlaveADC_Lab_5.X/I2C.c"
   1043 ;; Parameters:    Size  Location     Type
   1044 ;;  address         1    wreg     unsigned char 
   1045 ;; Auto vars:     Size  Location     Type
@@ -1170,59 +1170,59 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1075                           ; Regs used in _I2C_Slave_Init: [wreg]
   1076                           ;I2C_Slave_Init@address stored from wreg
   1077  0144  00F3               	movwf	I2C_Slave_Init@address
-  1078  0145                     l748:	
+  1078  0145                     l746:	
   1079                           
-  1080                           ;../SlaveADC_Lab_5.X/I2C.c: 83: void I2C_Slave_Init(uint8_t address);../SlaveADC_Lab_5.X
-      +                          /I2C.c: 84: {;../SlaveADC_Lab_5.X/I2C.c: 85:     SSPADD = address;
+  1080                           ;../SlaveADC_Lab_5.X/I2C.c: 85: void I2C_Slave_Init(uint8_t address);../SlaveADC_Lab_5.X
+      +                          /I2C.c: 86: {;../SlaveADC_Lab_5.X/I2C.c: 87:     SSPADD = address;
   1081  0145  0873               	movf	I2C_Slave_Init@address,w
   1082  0146  1683               	bsf	3,5	;RP0=1, select bank1
   1083  0147  1303               	bcf	3,6	;RP1=0, select bank1
   1084  0148  0093               	movwf	19	;volatile
   1085                           
-  1086                           ;../SlaveADC_Lab_5.X/I2C.c: 86:     SSPCON = 0x36;
+  1086                           ;../SlaveADC_Lab_5.X/I2C.c: 88:     SSPCON = 0x36;
   1087  0149  3036               	movlw	54
   1088  014A  1283               	bcf	3,5	;RP0=0, select bank0
   1089  014B  1303               	bcf	3,6	;RP1=0, select bank0
   1090  014C  0094               	movwf	20	;volatile
   1091                           
-  1092                           ;../SlaveADC_Lab_5.X/I2C.c: 87:     SSPSTAT = 0x80;
+  1092                           ;../SlaveADC_Lab_5.X/I2C.c: 89:     SSPSTAT = 0x80;
   1093  014D  3080               	movlw	128
   1094  014E  1683               	bsf	3,5	;RP0=1, select bank1
   1095  014F  1303               	bcf	3,6	;RP1=0, select bank1
   1096  0150  0094               	movwf	20	;volatile
   1097                           
-  1098                           ;../SlaveADC_Lab_5.X/I2C.c: 88:     SSPCON2 = 0x01;
+  1098                           ;../SlaveADC_Lab_5.X/I2C.c: 90:     SSPCON2 = 0x01;
   1099  0151  3001               	movlw	1
   1100  0152  0091               	movwf	17	;volatile
-  1101  0153                     l750:	
+  1101  0153                     l748:	
   1102                           
-  1103                           ;../SlaveADC_Lab_5.X/I2C.c: 89:     TRISC3 = 1;
+  1103                           ;../SlaveADC_Lab_5.X/I2C.c: 91:     TRISC3 = 1;
   1104  0153  1587               	bsf	7,3	;volatile
-  1105  0154                     l752:	
+  1105  0154                     l750:	
   1106                           
-  1107                           ;../SlaveADC_Lab_5.X/I2C.c: 90:     TRISC4 = 1;
+  1107                           ;../SlaveADC_Lab_5.X/I2C.c: 92:     TRISC4 = 1;
   1108  0154  1607               	bsf	7,4	;volatile
-  1109  0155                     l754:	
+  1109  0155                     l752:	
   1110                           
-  1111                           ;../SlaveADC_Lab_5.X/I2C.c: 91:     GIE = 1;
+  1111                           ;../SlaveADC_Lab_5.X/I2C.c: 93:     GIE = 1;
   1112  0155  178B               	bsf	11,7	;volatile
-  1113  0156                     l756:	
+  1113  0156                     l754:	
   1114                           
-  1115                           ;../SlaveADC_Lab_5.X/I2C.c: 92:     PEIE = 1;
+  1115                           ;../SlaveADC_Lab_5.X/I2C.c: 94:     PEIE = 1;
   1116  0156  170B               	bsf	11,6	;volatile
-  1117  0157                     l758:	
+  1117  0157                     l756:	
   1118                           
-  1119                           ;../SlaveADC_Lab_5.X/I2C.c: 93:     SSPIF = 0;
+  1119                           ;../SlaveADC_Lab_5.X/I2C.c: 95:     SSPIF = 0;
   1120  0157  1283               	bcf	3,5	;RP0=0, select bank0
   1121  0158  1303               	bcf	3,6	;RP1=0, select bank0
   1122  0159  118C               	bcf	12,3	;volatile
-  1123  015A                     l760:	
+  1123  015A                     l758:	
   1124                           
-  1125                           ;../SlaveADC_Lab_5.X/I2C.c: 94:     SSPIE = 1;
+  1125                           ;../SlaveADC_Lab_5.X/I2C.c: 96:     SSPIE = 1;
   1126  015A  1683               	bsf	3,5	;RP0=1, select bank1
   1127  015B  1303               	bcf	3,6	;RP1=0, select bank1
   1128  015C  158C               	bsf	12,3	;volatile
-  1129  015D                     l55:	
+  1129  015D                     l53:	
   1130  015D  0008               	return
   1131  015E                     __end_of_I2C_Slave_Init:	
   1132                           
@@ -1267,11 +1267,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1170  0083  1283               	bcf	3,5	;RP0=0, select bank0
   1171  0084  1303               	bcf	3,6	;RP1=0, select bank0
   1172  0085  1D8C               	btfss	12,3	;volatile
-  1173  0086  2888               	goto	u5_21
-  1174  0087  2889               	goto	u5_20
-  1175  0088                     u5_21:	
-  1176  0088  28E1               	goto	i1l123
-  1177  0089                     u5_20:	
+  1173  0086  2888               	goto	u6_21
+  1174  0087  2889               	goto	u6_20
+  1175  0088                     u6_21:	
+  1176  0088  28E1               	goto	i1l121
+  1177  0089                     u6_20:	
   1178  0089                     i1l828:	
   1179                           
   1180                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -1281,18 +1281,18 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1183                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 65:             if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
   1184  008A  1B14               	btfsc	20,6	;volatile
-  1185  008B  288D               	goto	u6_21
-  1186  008C  288E               	goto	u6_20
-  1187  008D                     u6_21:	
+  1185  008B  288D               	goto	u7_21
+  1186  008C  288E               	goto	u7_20
+  1187  008D                     u7_21:	
   1188  008D  2892               	goto	i1l832
-  1189  008E                     u6_20:	
+  1189  008E                     u7_20:	
   1190  008E                     i1l830:	
   1191  008E  1F94               	btfss	20,7	;volatile
-  1192  008F  2891               	goto	u7_21
-  1193  0090  2892               	goto	u7_20
-  1194  0091                     u7_21:	
+  1192  008F  2891               	goto	u8_21
+  1193  0090  2892               	goto	u8_20
+  1194  0091                     u8_21:	
   1195  0091  2899               	goto	i1l840
-  1196  0092                     u7_20:	
+  1196  0092                     u8_20:	
   1197  0092                     i1l832:	
   1198                           
   1199                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -1323,18 +1323,18 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1219  0099  1683               	bsf	3,5	;RP0=1, select bank1
   1220  009A  1303               	bcf	3,6	;RP1=0, select bank1
   1221  009B  1A94               	btfsc	20,5	;volatile
-  1222  009C  289E               	goto	u8_21
-  1223  009D  289F               	goto	u8_20
-  1224  009E                     u8_21:	
-  1225  009E  28BD               	goto	i1l114
-  1226  009F                     u8_20:	
+  1222  009C  289E               	goto	u9_21
+  1223  009D  289F               	goto	u9_20
+  1224  009E                     u9_21:	
+  1225  009E  28BD               	goto	i1l112
+  1226  009F                     u9_20:	
   1227  009F                     i1l842:	
   1228  009F  1914               	btfsc	20,2	;volatile
-  1229  00A0  28A2               	goto	u9_21
-  1230  00A1  28A3               	goto	u9_20
-  1231  00A2                     u9_21:	
-  1232  00A2  28BD               	goto	i1l114
-  1233  00A3                     u9_20:	
+  1229  00A0  28A2               	goto	u10_21
+  1230  00A1  28A3               	goto	u10_20
+  1231  00A2                     u10_21:	
+  1232  00A2  28BD               	goto	i1l112
+  1233  00A3                     u10_20:	
   1234  00A3                     i1l844:	
   1235                           
   1236                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -1355,18 +1355,18 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1249                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 75:                 SSPCONbits.CKP = 1;
   1250  00AA  1614               	bsf	20,4	;volatile
-  1251  00AB                     i1l115:	
+  1251  00AB                     i1l113:	
   1252                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 76:                 while(!SSPSTATbits.BF);
   1253                           
   1254  00AB  1683               	bsf	3,5	;RP0=1, select bank1
   1255  00AC  1303               	bcf	3,6	;RP1=0, select bank1
   1256  00AD  1C14               	btfss	20,0	;volatile
-  1257  00AE  28B0               	goto	u10_21
-  1258  00AF  28B1               	goto	u10_20
-  1259  00B0                     u10_21:	
-  1260  00B0  28AB               	goto	i1l115
-  1261  00B1                     u10_20:	
+  1257  00AE  28B0               	goto	u11_21
+  1258  00AF  28B1               	goto	u11_20
+  1259  00B0                     u11_21:	
+  1260  00B0  28AB               	goto	i1l113
+  1261  00B1                     u11_20:	
   1262  00B1                     i1l850:	
   1263                           
   1264                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -1382,28 +1382,28 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
       +                          .c: 78:                 _delay((unsigned long)((250)*(8000000/4000000.0)));
   1273  00B7  30A6               	movlw	166
   1274  00B8  00F0               	movwf	??_isr
-  1275  00B9                     u24_27:	
+  1275  00B9                     u25_27:	
   1276  00B9  0BF0               	decfsz	??_isr,f
-  1277  00BA  28B9               	goto	u24_27
+  1277  00BA  28B9               	goto	u25_27
   1278  00BB  0000               	nop
   1279                           
   1280                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 80:             }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-  1281  00BC  28DE               	goto	i1l118
-  1282  00BD                     i1l114:	
+  1281  00BC  28DE               	goto	i1l116
+  1282  00BD                     i1l112:	
   1283  00BD  1A94               	btfsc	20,5	;volatile
-  1284  00BE  28C0               	goto	u11_21
-  1285  00BF  28C1               	goto	u11_20
-  1286  00C0                     u11_21:	
-  1287  00C0  28DE               	goto	i1l118
-  1288  00C1                     u11_20:	
+  1284  00BE  28C0               	goto	u12_21
+  1285  00BF  28C1               	goto	u12_20
+  1286  00C0                     u12_21:	
+  1287  00C0  28DE               	goto	i1l116
+  1288  00C1                     u12_20:	
   1289  00C1                     i1l852:	
   1290  00C1  1D14               	btfss	20,2	;volatile
-  1291  00C2  28C4               	goto	u12_21
-  1292  00C3  28C5               	goto	u12_20
-  1293  00C4                     u12_21:	
-  1294  00C4  28DE               	goto	i1l118
-  1295  00C5                     u12_20:	
+  1291  00C2  28C4               	goto	u13_21
+  1292  00C3  28C5               	goto	u13_20
+  1293  00C4                     u13_21:	
+  1294  00C4  28DE               	goto	i1l116
+  1295  00C5                     u13_20:	
   1296  00C5                     i1l854:	
   1297                           
   1298                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
@@ -1438,30 +1438,30 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
       +                          .c: 85:                 _delay((unsigned long)((250)*(8000000/4000000.0)));
   1323  00D3  30A6               	movlw	166
   1324  00D4  00F0               	movwf	??_isr
-  1325  00D5                     u25_27:	
+  1325  00D5                     u26_27:	
   1326  00D5  0BF0               	decfsz	??_isr,f
-  1327  00D6  28D5               	goto	u25_27
+  1327  00D6  28D5               	goto	u26_27
   1328  00D7  0000               	nop
-  1329  00D8                     i1l120:	
+  1329  00D8                     i1l118:	
   1330                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 86:                 while(SSPSTATbits.BF);
   1331                           
   1332  00D8  1683               	bsf	3,5	;RP0=1, select bank1
   1333  00D9  1303               	bcf	3,6	;RP1=0, select bank1
   1334  00DA  1814               	btfsc	20,0	;volatile
-  1335  00DB  28DD               	goto	u13_21
-  1336  00DC  28DE               	goto	u13_20
-  1337  00DD                     u13_21:	
-  1338  00DD  28D8               	goto	i1l120
-  1339  00DE                     u13_20:	
-  1340  00DE                     i1l118:	
+  1335  00DB  28DD               	goto	u14_21
+  1336  00DC  28DE               	goto	u14_20
+  1337  00DD                     u14_21:	
+  1338  00DD  28D8               	goto	i1l118
+  1339  00DE                     u14_20:	
+  1340  00DE                     i1l116:	
   1341                           
   1342                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
       +                          .c: 89:             PIR1bits.SSPIF = 0;
   1343  00DE  1283               	bcf	3,5	;RP0=0, select bank0
   1344  00DF  1303               	bcf	3,6	;RP1=0, select bank0
   1345  00E0  118C               	bcf	12,3	;volatile
-  1346  00E1                     i1l123:	
+  1346  00E1                     i1l121:	
   1347  00E1  0872               	movf	??_isr+2,w
   1348  00E2  008A               	movwf	10
   1349  00E3  0E71               	swapf	(??_isr+1)^(0+4294967168),w
@@ -1616,54 +1616,54 @@ DATA                 0      0       D      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sun Feb 23 18:35:29 2020
+Symbol Table                                                                                   Sun Feb 23 19:53:39 2020
 
                        _z 0079               __CFG_CP$OFF 0000               _SSPSTATbits 0094  
-                      _BF 04A0                        l55 015D                       l140 016F  
-                     l150 00FC                       l151 0102                       l152 0108  
-                     l153 010E                       l154 0114                       l146 00EA  
-                     l155 011A                       l147 0142                       l156 0143  
-                     l148 00F0                       l149 00F6                       l900 005E  
-                     l750 0153                       l902 0062                       l910 0074  
-                     l760 015A                       l752 0154                       l912 0079  
-                     l904 006B                       l754 0155                       l770 0120  
-                     l906 006F                       l756 0156                       l748 0145  
-                     l780 0165                       l908 0073                       l860 0018  
-                     l758 0157                       l782 0168                       l934 0128  
-                     l766 00E9                       l870 0028                       l862 001E  
-                     l784 0169                       l776 015E                       l880 0038  
-                     l872 0029                       l864 0023                       l778 0163  
+                      _BF 04A0                        l53 015D                       l150 0108  
+                     l151 010E                       l152 0114                       l144 00EA  
+                     l153 011A                       l145 0142                       l138 016F  
+                     l154 0143                       l146 00F0                       l147 00F6  
+                     l148 00FC                       l149 0102                       l900 005E  
+                     l750 0154                       l902 0062                       l910 0074  
+                     l752 0155                       l912 0079                       l904 006B  
+                     l754 0156                       l746 0145                       l906 006F  
+                     l756 0157                       l748 0153                       l780 0168  
+                     l764 00E9                       l908 0073                       l860 0018  
+                     l758 015A                       l782 0169                       l774 015E  
+                     l934 0128                       l870 0028                       l862 001E  
+                     l776 0163                       l768 0120                       l880 0038  
+                     l872 0029                       l864 0023                       l778 0165  
                      l890 0050                       l882 0041                       l874 002D  
                      l866 0026                       l892 0051                       l884 0045  
                      l876 002F                       l868 0027                       l894 0053  
                      l886 0049                       l878 0034                       l896 0057  
                      l888 004A                       l898 0059                       _GIE 005F  
-                     u200 0062                       u201 0061                       u210 0079  
-                     u211 0078                       u140 002D                       u141 002C  
-                     u150 0034                       u151 0033                       u160 0038  
-                     u161 0037                       u170 0050                       u171 004F  
-                     u227 003C                       u180 0057                       u237 0066  
-                     u181 0056                       u190 005E                       u191 005D  
+                     u200 005E                       u201 005D                       u210 0062  
+                     u211 0061                       u220 0079                       u221 0078  
+                     u150 002D                       u151 002C                       u160 0034  
+                     u161 0033                       u170 0038                       u171 0037  
+                     u180 0050                       u181 004F                       u237 003C  
+                     u190 0057                       u247 0066                       u191 0056  
             __CFG_CPD$OFF 0000                       _isr 0083              __CFG_LVP$OFF 0000  
-                    ?_isr 0070                      _PEIE 005E                      u5_20 0089  
-                    u5_21 0088                      u6_20 008E                      u6_21 008D  
-                    u7_20 0092                      u7_21 0091                      u8_20 009F  
-                    u8_21 009E                      u9_20 00A3                      u9_21 00A2  
-            __CFG_WRT$OFF 0000                      _dato 0078                      _main 0018  
-                    _init 015E                      btemp 007E                      start 000C  
-           __CFG_IESO$OFF 0000                     ??_isr 0070                     ?_main 0070  
-                   ?_init 0070             __CFG_WDTE$OFF 0000                     _ANSEL 0188  
-                   i1l120 00D8                     i1l114 00BD                     i1l115 00AB  
-                   i1l123 00E1                     i1l118 00DE                     i1l830 008E  
-                   i1l840 0099                     i1l832 0092                     i1l850 00B1  
-                   i1l842 009F                     i1l834 0096                     i1l826 0083  
-                   i1l852 00C1                     i1l844 00A3                     i1l836 0097  
-                   i1l828 0089                     i1l854 00C5                     i1l846 00A9  
-                   i1l838 0098                     i1l856 00CB                     i1l848 00AA  
-                   i1l858 00D2                     u10_20 00B1                     u10_21 00B0  
-                   u11_20 00C1                     u11_21 00C0                     u12_20 00C5  
-                   u12_21 00C4                     u13_20 00DE                     u13_21 00DD  
-                   u24_27 00B9                     u25_27 00D5                     _PORTA 0005  
+                    ?_isr 0070                      _PEIE 005E                      u6_20 0089  
+                    u6_21 0088                      u7_20 008E                      u7_21 008D  
+                    u8_20 0092                      u8_21 0091                      u9_20 009F  
+                    u9_21 009E              __CFG_WRT$OFF 0000                      _dato 0078  
+                    _main 0018                      _init 015E                      btemp 007E  
+                    start 000C             __CFG_IESO$OFF 0000                     ??_isr 0070  
+                   ?_main 0070                     ?_init 0070             __CFG_WDTE$OFF 0000  
+                   _ANSEL 0188                     i1l112 00BD                     i1l113 00AB  
+                   i1l121 00E1                     i1l116 00DE                     i1l118 00D8  
+                   i1l830 008E                     i1l840 0099                     i1l832 0092  
+                   i1l850 00B1                     i1l842 009F                     i1l834 0096  
+                   i1l826 0083                     i1l852 00C1                     i1l844 00A3  
+                   i1l836 0097                     i1l828 0089                     i1l854 00C5  
+                   i1l846 00A9                     i1l838 0098                     i1l856 00CB  
+                   i1l848 00AA                     i1l858 00D2                     u10_20 00A3  
+                   u10_21 00A2                     u11_20 00B1                     u11_21 00B0  
+                   u12_20 00C1                     u12_21 00C0                     u13_20 00C5  
+                   u13_21 00C4                     u14_20 00DE                     u14_21 00DD  
+                   u25_27 00B9                     u26_27 00D5                     _PORTA 0005  
                    _PORTB 0006                     _PORTC 0007                     _PORTD 0008  
                    _TRISA 0085                     _TRISB 0086                     _TRISC 0087  
                    _TRISD 0088                     _SSPIE 0463                     _SSPIF 0063  
