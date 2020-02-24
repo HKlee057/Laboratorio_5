@@ -1,0 +1,1690 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Sun Feb 23 18:24:55 2020
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	16F887
+     2                           	opt	pw 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	maintext,global,class=CODE,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	psect	text3,local,class=CODE,merge=1,delta=2
+    11                           	psect	text4,local,class=CODE,merge=1,delta=2
+    12                           	psect	intentry,global,class=CODE,delta=2
+    13                           	dabs	1,0x7E,2
+    14  0000                     
+    15                           ; Version 2.10
+    16                           ; Generated 31/07/2019 GMT
+    17                           ; 
+    18                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    19                           ; All rights reserved.
+    20                           ; 
+    21                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    22                           ; 
+    23                           ; Redistribution and use in source and binary forms, with or without modification, are
+    24                           ; permitted provided that the following conditions are met:
+    25                           ; 
+    26                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    27                           ;        conditions and the following disclaimer.
+    28                           ; 
+    29                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    30                           ;        of conditions and the following disclaimer in the documentation and/or other
+    31                           ;        materials provided with the distribution.
+    32                           ; 
+    33                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    34                           ;        software without specific prior written permission.
+    35                           ; 
+    36                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    37                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    38                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    39                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    40                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    41                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    42                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    43                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    44                           ; 
+    45                           ; 
+    46                           ; Code-generator required, PIC16F887 Definitions
+    47                           ; 
+    48                           ; SFR Addresses
+    49  0000                     	;# 
+    50  0001                     	;# 
+    51  0002                     	;# 
+    52  0003                     	;# 
+    53  0004                     	;# 
+    54  0005                     	;# 
+    55  0006                     	;# 
+    56  0007                     	;# 
+    57  0008                     	;# 
+    58  0009                     	;# 
+    59  000A                     	;# 
+    60  000B                     	;# 
+    61  000C                     	;# 
+    62  000D                     	;# 
+    63  000E                     	;# 
+    64  000E                     	;# 
+    65  000F                     	;# 
+    66  0010                     	;# 
+    67  0011                     	;# 
+    68  0012                     	;# 
+    69  0013                     	;# 
+    70  0014                     	;# 
+    71  0015                     	;# 
+    72  0015                     	;# 
+    73  0016                     	;# 
+    74  0017                     	;# 
+    75  0018                     	;# 
+    76  0019                     	;# 
+    77  001A                     	;# 
+    78  001B                     	;# 
+    79  001B                     	;# 
+    80  001C                     	;# 
+    81  001D                     	;# 
+    82  001E                     	;# 
+    83  001F                     	;# 
+    84  0081                     	;# 
+    85  0085                     	;# 
+    86  0086                     	;# 
+    87  0087                     	;# 
+    88  0088                     	;# 
+    89  0089                     	;# 
+    90  008C                     	;# 
+    91  008D                     	;# 
+    92  008E                     	;# 
+    93  008F                     	;# 
+    94  0090                     	;# 
+    95  0091                     	;# 
+    96  0092                     	;# 
+    97  0093                     	;# 
+    98  0093                     	;# 
+    99  0093                     	;# 
+   100  0094                     	;# 
+   101  0095                     	;# 
+   102  0096                     	;# 
+   103  0097                     	;# 
+   104  0098                     	;# 
+   105  0099                     	;# 
+   106  009A                     	;# 
+   107  009B                     	;# 
+   108  009C                     	;# 
+   109  009D                     	;# 
+   110  009E                     	;# 
+   111  009F                     	;# 
+   112  0105                     	;# 
+   113  0107                     	;# 
+   114  0108                     	;# 
+   115  0109                     	;# 
+   116  010C                     	;# 
+   117  010C                     	;# 
+   118  010D                     	;# 
+   119  010E                     	;# 
+   120  010F                     	;# 
+   121  0185                     	;# 
+   122  0187                     	;# 
+   123  0188                     	;# 
+   124  0189                     	;# 
+   125  018C                     	;# 
+   126  018D                     	;# 
+   127  0000                     	;# 
+   128  0001                     	;# 
+   129  0002                     	;# 
+   130  0003                     	;# 
+   131  0004                     	;# 
+   132  0005                     	;# 
+   133  0006                     	;# 
+   134  0007                     	;# 
+   135  0008                     	;# 
+   136  0009                     	;# 
+   137  000A                     	;# 
+   138  000B                     	;# 
+   139  000C                     	;# 
+   140  000D                     	;# 
+   141  000E                     	;# 
+   142  000E                     	;# 
+   143  000F                     	;# 
+   144  0010                     	;# 
+   145  0011                     	;# 
+   146  0012                     	;# 
+   147  0013                     	;# 
+   148  0014                     	;# 
+   149  0015                     	;# 
+   150  0015                     	;# 
+   151  0016                     	;# 
+   152  0017                     	;# 
+   153  0018                     	;# 
+   154  0019                     	;# 
+   155  001A                     	;# 
+   156  001B                     	;# 
+   157  001B                     	;# 
+   158  001C                     	;# 
+   159  001D                     	;# 
+   160  001E                     	;# 
+   161  001F                     	;# 
+   162  0081                     	;# 
+   163  0085                     	;# 
+   164  0086                     	;# 
+   165  0087                     	;# 
+   166  0088                     	;# 
+   167  0089                     	;# 
+   168  008C                     	;# 
+   169  008D                     	;# 
+   170  008E                     	;# 
+   171  008F                     	;# 
+   172  0090                     	;# 
+   173  0091                     	;# 
+   174  0092                     	;# 
+   175  0093                     	;# 
+   176  0093                     	;# 
+   177  0093                     	;# 
+   178  0094                     	;# 
+   179  0095                     	;# 
+   180  0096                     	;# 
+   181  0097                     	;# 
+   182  0098                     	;# 
+   183  0099                     	;# 
+   184  009A                     	;# 
+   185  009B                     	;# 
+   186  009C                     	;# 
+   187  009D                     	;# 
+   188  009E                     	;# 
+   189  009F                     	;# 
+   190  0105                     	;# 
+   191  0107                     	;# 
+   192  0108                     	;# 
+   193  0109                     	;# 
+   194  010C                     	;# 
+   195  010C                     	;# 
+   196  010D                     	;# 
+   197  010E                     	;# 
+   198  010F                     	;# 
+   199  0185                     	;# 
+   200  0187                     	;# 
+   201  0188                     	;# 
+   202  0189                     	;# 
+   203  018C                     	;# 
+   204  018D                     	;# 
+   205  0000                     	;# 
+   206  0001                     	;# 
+   207  0002                     	;# 
+   208  0003                     	;# 
+   209  0004                     	;# 
+   210  0005                     	;# 
+   211  0006                     	;# 
+   212  0007                     	;# 
+   213  0008                     	;# 
+   214  0009                     	;# 
+   215  000A                     	;# 
+   216  000B                     	;# 
+   217  000C                     	;# 
+   218  000D                     	;# 
+   219  000E                     	;# 
+   220  000E                     	;# 
+   221  000F                     	;# 
+   222  0010                     	;# 
+   223  0011                     	;# 
+   224  0012                     	;# 
+   225  0013                     	;# 
+   226  0014                     	;# 
+   227  0015                     	;# 
+   228  0015                     	;# 
+   229  0016                     	;# 
+   230  0017                     	;# 
+   231  0018                     	;# 
+   232  0019                     	;# 
+   233  001A                     	;# 
+   234  001B                     	;# 
+   235  001B                     	;# 
+   236  001C                     	;# 
+   237  001D                     	;# 
+   238  001E                     	;# 
+   239  001F                     	;# 
+   240  0081                     	;# 
+   241  0085                     	;# 
+   242  0086                     	;# 
+   243  0087                     	;# 
+   244  0088                     	;# 
+   245  0089                     	;# 
+   246  008C                     	;# 
+   247  008D                     	;# 
+   248  008E                     	;# 
+   249  008F                     	;# 
+   250  0090                     	;# 
+   251  0091                     	;# 
+   252  0092                     	;# 
+   253  0093                     	;# 
+   254  0093                     	;# 
+   255  0093                     	;# 
+   256  0094                     	;# 
+   257  0095                     	;# 
+   258  0096                     	;# 
+   259  0097                     	;# 
+   260  0098                     	;# 
+   261  0099                     	;# 
+   262  009A                     	;# 
+   263  009B                     	;# 
+   264  009C                     	;# 
+   265  009D                     	;# 
+   266  009E                     	;# 
+   267  009F                     	;# 
+   268  0105                     	;# 
+   269  0107                     	;# 
+   270  0108                     	;# 
+   271  0109                     	;# 
+   272  010C                     	;# 
+   273  010C                     	;# 
+   274  010D                     	;# 
+   275  010E                     	;# 
+   276  010F                     	;# 
+   277  0185                     	;# 
+   278  0187                     	;# 
+   279  0188                     	;# 
+   280  0189                     	;# 
+   281  018C                     	;# 
+   282  018D                     	;# 
+   283  0000                     	;# 
+   284  0001                     	;# 
+   285  0002                     	;# 
+   286  0003                     	;# 
+   287  0004                     	;# 
+   288  0005                     	;# 
+   289  0006                     	;# 
+   290  0007                     	;# 
+   291  0008                     	;# 
+   292  0009                     	;# 
+   293  000A                     	;# 
+   294  000B                     	;# 
+   295  000C                     	;# 
+   296  000D                     	;# 
+   297  000E                     	;# 
+   298  000E                     	;# 
+   299  000F                     	;# 
+   300  0010                     	;# 
+   301  0011                     	;# 
+   302  0012                     	;# 
+   303  0013                     	;# 
+   304  0014                     	;# 
+   305  0015                     	;# 
+   306  0015                     	;# 
+   307  0016                     	;# 
+   308  0017                     	;# 
+   309  0018                     	;# 
+   310  0019                     	;# 
+   311  001A                     	;# 
+   312  001B                     	;# 
+   313  001B                     	;# 
+   314  001C                     	;# 
+   315  001D                     	;# 
+   316  001E                     	;# 
+   317  001F                     	;# 
+   318  0081                     	;# 
+   319  0085                     	;# 
+   320  0086                     	;# 
+   321  0087                     	;# 
+   322  0088                     	;# 
+   323  0089                     	;# 
+   324  008C                     	;# 
+   325  008D                     	;# 
+   326  008E                     	;# 
+   327  008F                     	;# 
+   328  0090                     	;# 
+   329  0091                     	;# 
+   330  0092                     	;# 
+   331  0093                     	;# 
+   332  0093                     	;# 
+   333  0093                     	;# 
+   334  0094                     	;# 
+   335  0095                     	;# 
+   336  0096                     	;# 
+   337  0097                     	;# 
+   338  0098                     	;# 
+   339  0099                     	;# 
+   340  009A                     	;# 
+   341  009B                     	;# 
+   342  009C                     	;# 
+   343  009D                     	;# 
+   344  009E                     	;# 
+   345  009F                     	;# 
+   346  0105                     	;# 
+   347  0107                     	;# 
+   348  0108                     	;# 
+   349  0109                     	;# 
+   350  010C                     	;# 
+   351  010C                     	;# 
+   352  010D                     	;# 
+   353  010E                     	;# 
+   354  010F                     	;# 
+   355  0185                     	;# 
+   356  0187                     	;# 
+   357  0188                     	;# 
+   358  0189                     	;# 
+   359  018C                     	;# 
+   360  018D                     	;# 
+   361  0008                     _PORTDbits	set	8
+   362  0008                     _PORTD	set	8
+   363  0007                     _PORTC	set	7
+   364  0006                     _PORTB	set	6
+   365  0005                     _PORTA	set	5
+   366  0014                     _SSPCONbits	set	20
+   367  000C                     _PIR1bits	set	12
+   368  0013                     _SSPBUF	set	19
+   369  0014                     _SSPCON	set	20
+   370  0063                     _SSPIF	set	99
+   371  005E                     _PEIE	set	94
+   372  005F                     _GIE	set	95
+   373  008F                     _OSCCONbits	set	143
+   374  0088                     _TRISD	set	136
+   375  0087                     _TRISC	set	135
+   376  0086                     _TRISB	set	134
+   377  0085                     _TRISA	set	133
+   378  0094                     _SSPSTATbits	set	148
+   379  0091                     _SSPCON2bits	set	145
+   380  0087                     _TRISCbits	set	135
+   381  0094                     _SSPSTAT	set	148
+   382  0093                     _SSPADD	set	147
+   383  0091                     _SSPCON2	set	145
+   384  04A0                     _BF	set	1184
+   385  0463                     _SSPIE	set	1123
+   386  043C                     _TRISC4	set	1084
+   387  043B                     _TRISC3	set	1083
+   388  0189                     _ANSELH	set	393
+   389  0188                     _ANSEL	set	392
+   390                           
+   391                           ; #config settings
+   392  0000                     
+   393                           	psect	cinit
+   394  000F                     start_initialization:	
+   395  000F                     __initialization:	
+   396                           
+   397                           ; Clear objects allocated to COMMON
+   398  000F  01F8               	clrf	__pbssCOMMON& (0+127)
+   399  0010  01F9               	clrf	(__pbssCOMMON+1)& (0+127)
+   400  0011  01FA               	clrf	(__pbssCOMMON+2)& (0+127)
+   401  0012  01FB               	clrf	(__pbssCOMMON+3)& (0+127)
+   402  0013  01FC               	clrf	(__pbssCOMMON+4)& (0+127)
+   403  0014                     end_of_initialization:	
+   404                           ;End of C runtime variable initialization code
+   405                           
+   406  0014                     __end_of__initialization:	
+   407  0014  0183               	clrf	3
+   408  0015  120A  118A  2818   	ljmp	_main	;jump to C main() function
+   409                           
+   410                           	psect	bssCOMMON
+   411  0078                     __pbssCOMMON:	
+   412  0078                     _dato:	
+   413  0078                     	ds	1
+   414  0079                     _z:	
+   415  0079                     	ds	1
+   416  007A                     _count:	
+   417  007A                     	ds	1
+   418  007B                     _sub_button:	
+   419  007B                     	ds	1
+   420  007C                     _add_button:	
+   421  007C                     	ds	1
+   422                           
+   423                           	psect	cstackCOMMON
+   424  0070                     __pcstackCOMMON:	
+   425  0070                     ?_initOsc:	
+   426  0070                     ?_init:	
+   427                           ; 1 bytes @ 0x0
+   428                           
+   429  0070                     ?_I2C_Slave_Init:	
+   430                           ; 1 bytes @ 0x0
+   431                           
+   432  0070                     ?_isr:	
+   433                           ; 1 bytes @ 0x0
+   434                           
+   435  0070                     ??_isr:	
+   436                           ; 1 bytes @ 0x0
+   437                           
+   438  0070                     ?_main:	
+   439                           ; 1 bytes @ 0x0
+   440                           
+   441                           
+   442                           ; 1 bytes @ 0x0
+   443  0070                     	ds	3
+   444  0073                     ??_initOsc:	
+   445  0073                     ??_I2C_Slave_Init:	
+   446                           ; 1 bytes @ 0x3
+   447                           
+   448  0073                     I2C_Slave_Init@address:	
+   449                           ; 1 bytes @ 0x3
+   450                           
+   451                           
+   452                           ; 1 bytes @ 0x3
+   453  0073                     	ds	1
+   454  0074                     ??_init:	
+   455                           
+   456                           ; 1 bytes @ 0x4
+   457  0074                     	ds	1
+   458  0075                     initOsc@frec:	
+   459                           
+   460                           ; 1 bytes @ 0x5
+   461  0075                     	ds	1
+   462  0076                     ??_main:	
+   463                           
+   464                           ; 1 bytes @ 0x6
+   465  0076                     	ds	2
+   466                           
+   467                           	psect	maintext
+   468  0018                     __pmaintext:	
+   469 ;;
+   470 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   471 ;;
+   472 ;; *************** function _main *****************
+   473 ;; Defined at:
+   474 ;;		line 95 in file "D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c"
+   475 ;; Parameters:    Size  Location     Type
+   476 ;;		None
+   477 ;; Auto vars:     Size  Location     Type
+   478 ;;		None
+   479 ;; Return value:  Size  Location     Type
+   480 ;;                  1    wreg      void 
+   481 ;; Registers used:
+   482 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   483 ;; Tracked objects:
+   484 ;;		On entry : B00/0
+   485 ;;		On exit  : 0/0
+   486 ;;		Unchanged: 0/0
+   487 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   488 ;;      Params:         0       0       0       0       0
+   489 ;;      Locals:         0       0       0       0       0
+   490 ;;      Temps:          2       0       0       0       0
+   491 ;;      Totals:         2       0       0       0       0
+   492 ;;Total ram usage:        2 bytes
+   493 ;; Hardware stack levels required when called:    3
+   494 ;; This function calls:
+   495 ;;		_init
+   496 ;;		_initOsc
+   497 ;; This function is called by:
+   498 ;;		Startup code after reset
+   499 ;; This function uses a non-reentrant model
+   500 ;;
+   501                           
+   502                           
+   503                           ;psect for function _main
+   504  0018                     _main:	
+   505  0018                     l860:	
+   506                           ;incstack = 0
+   507                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   508                           
+   509                           
+   510                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 96:     initOsc(7);
+   511  0018  3007               	movlw	7
+   512  0019  120A  118A  20E8  120A  118A  	fcall	_initOsc
+   513  001E                     l862:	
+   514                           
+   515                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 97:     init();
+   516  001E  120A  118A  215E  120A  118A  	fcall	_init
+   517  0023                     l864:	
+   518                           
+   519                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 99:     PORTA = 0x00;
+   520  0023  1283               	bcf	3,5	;RP0=0, select bank0
+   521  0024  1303               	bcf	3,6	;RP1=0, select bank0
+   522  0025  0185               	clrf	5	;volatile
+   523  0026                     l866:	
+   524                           
+   525                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 100:     PORTB = 0x00;
+   526  0026  0186               	clrf	6	;volatile
+   527  0027                     l868:	
+   528                           
+   529                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 101:     PORTC = 0x00;
+   530  0027  0187               	clrf	7	;volatile
+   531  0028                     l870:	
+   532                           
+   533                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 102:     PORTD = 0x00;
+   534  0028  0188               	clrf	8	;volatile
+   535  0029                     l872:	
+   536                           
+   537                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 106:     if (PORTDbits.RD2 == 1){
+   538  0029  1D08               	btfss	8,2	;volatile
+   539  002A  282C               	goto	u141
+   540  002B  282D               	goto	u140
+   541  002C                     u141:	
+   542  002C  282F               	goto	l876
+   543  002D                     u140:	
+   544  002D                     l874:	
+   545                           
+   546                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 107:         add_button=1;
+   547  002D  01FC               	clrf	_add_button
+   548  002E  0AFC               	incf	_add_button,f
+   549  002F                     l876:	
+   550                           
+   551                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 109:     if (add_button==1 && PORTDbits.RD2==0){
+   552  002F  037C               	decf	_add_button,w
+   553  0030  1D03               	btfss	3,2
+   554  0031  2833               	goto	u151
+   555  0032  2834               	goto	u150
+   556  0033                     u151:	
+   557  0033  284A               	goto	l888
+   558  0034                     u150:	
+   559  0034                     l878:	
+   560  0034  1908               	btfsc	8,2	;volatile
+   561  0035  2837               	goto	u161
+   562  0036  2838               	goto	u160
+   563  0037                     u161:	
+   564  0037  284A               	goto	l888
+   565  0038                     u160:	
+   566  0038                     l880:	
+   567                           
+   568                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 110:         _delay((unsigned long)((10)*(8000000/4000.0)));
+   569  0038  301A               	movlw	26
+   570  0039  00F7               	movwf	??_main+1
+   571  003A  30F8               	movlw	248
+   572  003B  00F6               	movwf	??_main
+   573  003C                     u227:	
+   574  003C  0BF6               	decfsz	??_main,f
+   575  003D  283C               	goto	u227
+   576  003E  0BF7               	decfsz	??_main+1,f
+   577  003F  283C               	goto	u227
+   578  0040  0000               	nop
+   579  0041                     l882:	
+   580                           
+   581                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 111:         count++;
+   582  0041  3001               	movlw	1
+   583  0042  00F6               	movwf	??_main
+   584  0043  0876               	movf	??_main,w
+   585  0044  07FA               	addwf	_count,f
+   586  0045                     l884:	
+   587                           
+   588                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 112:         PORTB = count;
+   589  0045  087A               	movf	_count,w
+   590  0046  1283               	bcf	3,5	;RP0=0, select bank0
+   591  0047  1303               	bcf	3,6	;RP1=0, select bank0
+   592  0048  0086               	movwf	6	;volatile
+   593  0049                     l886:	
+   594                           
+   595                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 113:         add_button = 0;
+   596  0049  01FC               	clrf	_add_button
+   597  004A                     l888:	
+   598                           
+   599                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 115:     if (count==16){
+   600  004A  3010               	movlw	16
+   601  004B  067A               	xorwf	_count,w
+   602  004C  1D03               	btfss	3,2
+   603  004D  284F               	goto	u171
+   604  004E  2850               	goto	u170
+   605  004F                     u171:	
+   606  004F  2853               	goto	l894
+   607  0050                     u170:	
+   608  0050                     l890:	
+   609                           
+   610                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 116:         count = 0;
+   611  0050  01FA               	clrf	_count
+   612  0051                     l892:	
+   613                           
+   614                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 117:         PORTB = count;
+   615  0051  087A               	movf	_count,w
+   616  0052  0086               	movwf	6	;volatile
+   617  0053                     l894:	
+   618                           
+   619                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 120:     if (PORTDbits.RD3 == 1){
+   620  0053  1D88               	btfss	8,3	;volatile
+   621  0054  2856               	goto	u181
+   622  0055  2857               	goto	u180
+   623  0056                     u181:	
+   624  0056  2859               	goto	l898
+   625  0057                     u180:	
+   626  0057                     l896:	
+   627                           
+   628                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 121:         sub_button=1;
+   629  0057  01FB               	clrf	_sub_button
+   630  0058  0AFB               	incf	_sub_button,f
+   631  0059                     l898:	
+   632                           
+   633                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 123:     if (sub_button==1 && PORTDbits.RD3==0){
+   634  0059  037B               	decf	_sub_button,w
+   635  005A  1D03               	btfss	3,2
+   636  005B  285D               	goto	u191
+   637  005C  285E               	goto	u190
+   638  005D                     u191:	
+   639  005D  2874               	goto	l910
+   640  005E                     u190:	
+   641  005E                     l900:	
+   642  005E  1988               	btfsc	8,3	;volatile
+   643  005F  2861               	goto	u201
+   644  0060  2862               	goto	u200
+   645  0061                     u201:	
+   646  0061  2874               	goto	l910
+   647  0062                     u200:	
+   648  0062                     l902:	
+   649                           
+   650                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 124:         _delay((unsigned long)((10)*(8000000/4000.0)));
+   651  0062  301A               	movlw	26
+   652  0063  00F7               	movwf	??_main+1
+   653  0064  30F8               	movlw	248
+   654  0065  00F6               	movwf	??_main
+   655  0066                     u237:	
+   656  0066  0BF6               	decfsz	??_main,f
+   657  0067  2866               	goto	u237
+   658  0068  0BF7               	decfsz	??_main+1,f
+   659  0069  2866               	goto	u237
+   660  006A  0000               	nop
+   661  006B                     l904:	
+   662                           
+   663                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 125:         count--;
+   664  006B  30FF               	movlw	255
+   665  006C  00F6               	movwf	??_main
+   666  006D  0876               	movf	??_main,w
+   667  006E  07FA               	addwf	_count,f
+   668  006F                     l906:	
+   669                           
+   670                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 126:         PORTB = count;
+   671  006F  087A               	movf	_count,w
+   672  0070  1283               	bcf	3,5	;RP0=0, select bank0
+   673  0071  1303               	bcf	3,6	;RP1=0, select bank0
+   674  0072  0086               	movwf	6	;volatile
+   675  0073                     l908:	
+   676                           
+   677                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 127:         sub_button = 0;
+   678  0073  01FB               	clrf	_sub_button
+   679  0074                     l910:	
+   680                           
+   681                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 129:     if (count==-1){
+   682  0074  0A7A               	incf	_count,w
+   683  0075  1D03               	btfss	3,2
+   684  0076  2878               	goto	u211
+   685  0077  2879               	goto	u210
+   686  0078                     u211:	
+   687  0078  2829               	goto	l872
+   688  0079                     u210:	
+   689  0079                     l912:	
+   690                           
+   691                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 130:         count = 15;
+   692  0079  300F               	movlw	15
+   693  007A  00F6               	movwf	??_main
+   694  007B  0876               	movf	??_main,w
+   695  007C  00FA               	movwf	_count
+   696                           
+   697                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 131:         PORTB = count;
+   698  007D  087A               	movf	_count,w
+   699  007E  0086               	movwf	6	;volatile
+   700  007F  2829               	goto	l872
+   701  0080  120A  118A  280C   	ljmp	start
+   702  0083                     __end_of_main:	
+   703                           
+   704                           	psect	text1
+   705  00E8                     __ptext1:	
+   706 ;; *************** function _initOsc *****************
+   707 ;; Defined at:
+   708 ;;		line 8 in file "D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador.c"
+   709 ;; Parameters:    Size  Location     Type
+   710 ;;  frec            1    wreg     unsigned char 
+   711 ;; Auto vars:     Size  Location     Type
+   712 ;;  frec            1    5[COMMON] unsigned char 
+   713 ;; Return value:  Size  Location     Type
+   714 ;;                  1    wreg      void 
+   715 ;; Registers used:
+   716 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   717 ;; Tracked objects:
+   718 ;;		On entry : 0/0
+   719 ;;		On exit  : 0/0
+   720 ;;		Unchanged: 0/0
+   721 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   722 ;;      Params:         0       0       0       0       0
+   723 ;;      Locals:         1       0       0       0       0
+   724 ;;      Temps:          2       0       0       0       0
+   725 ;;      Totals:         3       0       0       0       0
+   726 ;;Total ram usage:        3 bytes
+   727 ;; Hardware stack levels used:    1
+   728 ;; Hardware stack levels required when called:    1
+   729 ;; This function calls:
+   730 ;;		Nothing
+   731 ;; This function is called by:
+   732 ;;		_main
+   733 ;; This function uses a non-reentrant model
+   734 ;;
+   735                           
+   736                           
+   737                           ;psect for function _initOsc
+   738  00E8                     _initOsc:	
+   739                           
+   740                           ;incstack = 0
+   741                           ; Regs used in _initOsc: [wreg-fsr0h+status,2+status,0]
+   742                           ;initOsc@frec stored from wreg
+   743  00E8  00F5               	movwf	initOsc@frec
+   744  00E9                     l766:	
+   745                           
+   746                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 9:     switch(frec){
+   747  00E9  2920               	goto	l770
+   748  00EA                     l146:	
+   749                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 10:         case 0:
+   750                           
+   751                           
+   752                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 11:             OSCCONbits.IRCF0 = 0;
+   753  00EA  1683               	bsf	3,5	;RP0=1, select bank1
+   754  00EB  1303               	bcf	3,6	;RP1=0, select bank1
+   755  00EC  120F               	bcf	15,4	;volatile
+   756                           
+   757                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 12:             OSCCONbits.IRCF1 = 0;
+   758  00ED  128F               	bcf	15,5	;volatile
+   759                           
+   760                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 13:             OSCCONbits.IRCF2 = 0;
+   761  00EE  130F               	bcf	15,6	;volatile
+   762                           
+   763                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 14:             break;
+   764  00EF  2942               	goto	l147
+   765  00F0                     l148:	
+   766                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 15:         case 1:
+   767                           
+   768                           
+   769                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 16:             OSCCONbits.IRCF0 = 1;
+   770  00F0  1683               	bsf	3,5	;RP0=1, select bank1
+   771  00F1  1303               	bcf	3,6	;RP1=0, select bank1
+   772  00F2  160F               	bsf	15,4	;volatile
+   773                           
+   774                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 17:             OSCCONbits.IRCF1 = 0;
+   775  00F3  128F               	bcf	15,5	;volatile
+   776                           
+   777                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 18:             OSCCONbits.IRCF2 = 0;
+   778  00F4  130F               	bcf	15,6	;volatile
+   779                           
+   780                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 19:             break;
+   781  00F5  2942               	goto	l147
+   782  00F6                     l149:	
+   783                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 20:         case 2:
+   784                           
+   785                           
+   786                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 21:             OSCCONbits.IRCF0 = 0;
+   787  00F6  1683               	bsf	3,5	;RP0=1, select bank1
+   788  00F7  1303               	bcf	3,6	;RP1=0, select bank1
+   789  00F8  120F               	bcf	15,4	;volatile
+   790                           
+   791                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 22:             OSCCONbits.IRCF1 = 1;
+   792  00F9  168F               	bsf	15,5	;volatile
+   793                           
+   794                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 23:             OSCCONbits.IRCF2 = 0;
+   795  00FA  130F               	bcf	15,6	;volatile
+   796                           
+   797                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 24:             break;
+   798  00FB  2942               	goto	l147
+   799  00FC                     l150:	
+   800                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 25:         case 3:
+   801                           
+   802                           
+   803                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 26:             OSCCONbits.IRCF0 = 1;
+   804  00FC  1683               	bsf	3,5	;RP0=1, select bank1
+   805  00FD  1303               	bcf	3,6	;RP1=0, select bank1
+   806  00FE  160F               	bsf	15,4	;volatile
+   807                           
+   808                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 27:             OSCCONbits.IRCF1 = 1;
+   809  00FF  168F               	bsf	15,5	;volatile
+   810                           
+   811                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 28:             OSCCONbits.IRCF2 = 0;
+   812  0100  130F               	bcf	15,6	;volatile
+   813                           
+   814                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 29:             break;
+   815  0101  2942               	goto	l147
+   816  0102                     l151:	
+   817                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 30:         case 4:
+   818                           
+   819                           
+   820                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 31:             OSCCONbits.IRCF0 = 0;
+   821  0102  1683               	bsf	3,5	;RP0=1, select bank1
+   822  0103  1303               	bcf	3,6	;RP1=0, select bank1
+   823  0104  120F               	bcf	15,4	;volatile
+   824                           
+   825                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 32:             OSCCONbits.IRCF1 = 0;
+   826  0105  128F               	bcf	15,5	;volatile
+   827                           
+   828                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 33:             OSCCONbits.IRCF2 = 1;
+   829  0106  170F               	bsf	15,6	;volatile
+   830                           
+   831                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 34:             break;
+   832  0107  2942               	goto	l147
+   833  0108                     l152:	
+   834                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 35:         case 5:
+   835                           
+   836                           
+   837                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 36:             OSCCONbits.IRCF0 = 1;
+   838  0108  1683               	bsf	3,5	;RP0=1, select bank1
+   839  0109  1303               	bcf	3,6	;RP1=0, select bank1
+   840  010A  160F               	bsf	15,4	;volatile
+   841                           
+   842                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 37:             OSCCONbits.IRCF1 = 0;
+   843  010B  128F               	bcf	15,5	;volatile
+   844                           
+   845                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 38:             OSCCONbits.IRCF2 = 1;
+   846  010C  170F               	bsf	15,6	;volatile
+   847                           
+   848                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 39:             break;
+   849  010D  2942               	goto	l147
+   850  010E                     l153:	
+   851                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 40:         case 6:
+   852                           
+   853                           
+   854                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 41:             OSCCONbits.IRCF0 = 0;
+   855  010E  1683               	bsf	3,5	;RP0=1, select bank1
+   856  010F  1303               	bcf	3,6	;RP1=0, select bank1
+   857  0110  120F               	bcf	15,4	;volatile
+   858                           
+   859                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 42:             OSCCONbits.IRCF1 = 1;
+   860  0111  168F               	bsf	15,5	;volatile
+   861                           
+   862                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 43:             OSCCONbits.IRCF2 = 1;
+   863  0112  170F               	bsf	15,6	;volatile
+   864                           
+   865                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 44:             break;
+   866  0113  2942               	goto	l147
+   867  0114                     l154:	
+   868                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 45:         case 7:
+   869                           
+   870                           
+   871                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 46:             OSCCONbits.IRCF0 = 1;
+   872  0114  1683               	bsf	3,5	;RP0=1, select bank1
+   873  0115  1303               	bcf	3,6	;RP1=0, select bank1
+   874  0116  160F               	bsf	15,4	;volatile
+   875                           
+   876                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 47:             OSCCONbits.IRCF1 = 1;
+   877  0117  168F               	bsf	15,5	;volatile
+   878                           
+   879                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 48:             OSCCONbits.IRCF2 = 1;
+   880  0118  170F               	bsf	15,6	;volatile
+   881                           
+   882                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 49:             break;
+   883  0119  2942               	goto	l147
+   884  011A                     l155:	
+   885                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 50:         default:
+   886                           
+   887                           
+   888                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 51:             OSCCONbits.IRCF0 = 0;
+   889  011A  1683               	bsf	3,5	;RP0=1, select bank1
+   890  011B  1303               	bcf	3,6	;RP1=0, select bank1
+   891  011C  120F               	bcf	15,4	;volatile
+   892                           
+   893                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 52:             OSCCONbits.IRCF1 = 1;
+   894  011D  168F               	bsf	15,5	;volatile
+   895                           
+   896                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 53:             OSCCONbits.IRCF2 = 1;
+   897  011E  170F               	bsf	15,6	;volatile
+   898                           
+   899                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 54:             break;
+   900  011F  2942               	goto	l147
+   901  0120                     l770:	
+   902  0120  0875               	movf	initOsc@frec,w
+   903  0121  00F3               	movwf	??_initOsc
+   904  0122  01F4               	clrf	??_initOsc+1
+   905                           
+   906                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   907                           ; Switch size 1, requested type "simple"
+   908                           ; Number of cases is 1, Range of values is 0 to 0
+   909                           ; switch strategies available:
+   910                           ; Name         Instructions Cycles
+   911                           ; simple_byte            4     3 (average)
+   912                           ; direct_byte           11     8 (fixed)
+   913                           ; jumptable            260     6 (fixed)
+   914                           ;	Chosen strategy is simple_byte
+   915  0123  0874               	movf	??_initOsc+1,w
+   916  0124  3A00               	xorlw	0	; case 0
+   917  0125  1903               	skipnz
+   918  0126  2928               	goto	l934
+   919  0127  291A               	goto	l155
+   920  0128                     l934:	
+   921                           
+   922                           ; Switch size 1, requested type "simple"
+   923                           ; Number of cases is 8, Range of values is 0 to 7
+   924                           ; switch strategies available:
+   925                           ; Name         Instructions Cycles
+   926                           ; simple_byte           25    13 (average)
+   927                           ; direct_byte           32     8 (fixed)
+   928                           ; jumptable            260     6 (fixed)
+   929                           ;	Chosen strategy is simple_byte
+   930  0128  0873               	movf	??_initOsc,w
+   931  0129  3A00               	xorlw	0	; case 0
+   932  012A  1903               	skipnz
+   933  012B  28EA               	goto	l146
+   934  012C  3A01               	xorlw	1	; case 1
+   935  012D  1903               	skipnz
+   936  012E  28F0               	goto	l148
+   937  012F  3A03               	xorlw	3	; case 2
+   938  0130  1903               	skipnz
+   939  0131  28F6               	goto	l149
+   940  0132  3A01               	xorlw	1	; case 3
+   941  0133  1903               	skipnz
+   942  0134  28FC               	goto	l150
+   943  0135  3A07               	xorlw	7	; case 4
+   944  0136  1903               	skipnz
+   945  0137  2902               	goto	l151
+   946  0138  3A01               	xorlw	1	; case 5
+   947  0139  1903               	skipnz
+   948  013A  2908               	goto	l152
+   949  013B  3A03               	xorlw	3	; case 6
+   950  013C  1903               	skipnz
+   951  013D  290E               	goto	l153
+   952  013E  3A01               	xorlw	1	; case 7
+   953  013F  1903               	skipnz
+   954  0140  2914               	goto	l154
+   955  0141  291A               	goto	l155
+   956  0142                     l147:	
+   957                           
+   958                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/Oscilador
+      +                          .c: 57:     OSCCONbits.SCS = 1;
+   959  0142  140F               	bsf	15,0	;volatile
+   960  0143                     l156:	
+   961  0143  0008               	return
+   962  0144                     __end_of_initOsc:	
+   963                           
+   964                           	psect	text2
+   965  015E                     __ptext2:	
+   966 ;; *************** function _init *****************
+   967 ;; Defined at:
+   968 ;;		line 140 in file "D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c"
+   969 ;; Parameters:    Size  Location     Type
+   970 ;;		None
+   971 ;; Auto vars:     Size  Location     Type
+   972 ;;		None
+   973 ;; Return value:  Size  Location     Type
+   974 ;;                  1    wreg      void 
+   975 ;; Registers used:
+   976 ;;		wreg, status,2, status,0, pclath, cstack
+   977 ;; Tracked objects:
+   978 ;;		On entry : 0/0
+   979 ;;		On exit  : 0/0
+   980 ;;		Unchanged: 0/0
+   981 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   982 ;;      Params:         0       0       0       0       0
+   983 ;;      Locals:         0       0       0       0       0
+   984 ;;      Temps:          0       0       0       0       0
+   985 ;;      Totals:         0       0       0       0       0
+   986 ;;Total ram usage:        0 bytes
+   987 ;; Hardware stack levels used:    1
+   988 ;; Hardware stack levels required when called:    2
+   989 ;; This function calls:
+   990 ;;		_I2C_Slave_Init
+   991 ;; This function is called by:
+   992 ;;		_main
+   993 ;; This function uses a non-reentrant model
+   994 ;;
+   995                           
+   996                           
+   997                           ;psect for function _init
+   998  015E                     _init:	
+   999  015E                     l776:	
+  1000                           ;incstack = 0
+  1001                           ; Regs used in _init: [wreg+status,2+status,0+pclath+cstack]
+  1002                           
+  1003                           
+  1004                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 141:     TRISA = 0;
+  1005  015E  1683               	bsf	3,5	;RP0=1, select bank1
+  1006  015F  1303               	bcf	3,6	;RP1=0, select bank1
+  1007  0160  0185               	clrf	5	;volatile
+  1008                           
+  1009                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 142:     TRISB = 0;
+  1010  0161  0186               	clrf	6	;volatile
+  1011                           
+  1012                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 143:     TRISC = 0;
+  1013  0162  0187               	clrf	7	;volatile
+  1014  0163                     l778:	
+  1015                           
+  1016                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 144:     TRISD = 0b00001100;
+  1017  0163  300C               	movlw	12
+  1018  0164  0088               	movwf	8	;volatile
+  1019  0165                     l780:	
+  1020                           
+  1021                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 145:     ANSEL = 0;
+  1022  0165  1683               	bsf	3,5	;RP0=1, select bank3
+  1023  0166  1703               	bsf	3,6	;RP1=1, select bank3
+  1024  0167  0188               	clrf	8	;volatile
+  1025  0168                     l782:	
+  1026                           
+  1027                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 146:     ANSELH = 0;
+  1028  0168  0189               	clrf	9	;volatile
+  1029  0169                     l784:	
+  1030                           
+  1031                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 147:     I2C_Slave_Init(0x90);
+  1032  0169  3090               	movlw	144
+  1033  016A  120A  118A  2144  120A  118A  	fcall	_I2C_Slave_Init
+  1034  016F                     l140:	
+  1035  016F  0008               	return
+  1036  0170                     __end_of_init:	
+  1037                           
+  1038                           	psect	text3
+  1039  0144                     __ptext3:	
+  1040 ;; *************** function _I2C_Slave_Init *****************
+  1041 ;; Defined at:
+  1042 ;;		line 83 in file "../SlaveADC_Lab_5.X/I2C.c"
+  1043 ;; Parameters:    Size  Location     Type
+  1044 ;;  address         1    wreg     unsigned char 
+  1045 ;; Auto vars:     Size  Location     Type
+  1046 ;;  address         1    3[COMMON] unsigned char 
+  1047 ;; Return value:  Size  Location     Type
+  1048 ;;                  1    wreg      void 
+  1049 ;; Registers used:
+  1050 ;;		wreg
+  1051 ;; Tracked objects:
+  1052 ;;		On entry : 0/0
+  1053 ;;		On exit  : 0/0
+  1054 ;;		Unchanged: 0/0
+  1055 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1056 ;;      Params:         0       0       0       0       0
+  1057 ;;      Locals:         1       0       0       0       0
+  1058 ;;      Temps:          0       0       0       0       0
+  1059 ;;      Totals:         1       0       0       0       0
+  1060 ;;Total ram usage:        1 bytes
+  1061 ;; Hardware stack levels used:    1
+  1062 ;; Hardware stack levels required when called:    1
+  1063 ;; This function calls:
+  1064 ;;		Nothing
+  1065 ;; This function is called by:
+  1066 ;;		_init
+  1067 ;; This function uses a non-reentrant model
+  1068 ;;
+  1069                           
+  1070                           
+  1071                           ;psect for function _I2C_Slave_Init
+  1072  0144                     _I2C_Slave_Init:	
+  1073                           
+  1074                           ;incstack = 0
+  1075                           ; Regs used in _I2C_Slave_Init: [wreg]
+  1076                           ;I2C_Slave_Init@address stored from wreg
+  1077  0144  00F3               	movwf	I2C_Slave_Init@address
+  1078  0145                     l748:	
+  1079                           
+  1080                           ;../SlaveADC_Lab_5.X/I2C.c: 83: void I2C_Slave_Init(uint8_t address);../SlaveADC_Lab_5.X
+      +                          /I2C.c: 84: {;../SlaveADC_Lab_5.X/I2C.c: 85:     SSPADD = address;
+  1081  0145  0873               	movf	I2C_Slave_Init@address,w
+  1082  0146  1683               	bsf	3,5	;RP0=1, select bank1
+  1083  0147  1303               	bcf	3,6	;RP1=0, select bank1
+  1084  0148  0093               	movwf	19	;volatile
+  1085                           
+  1086                           ;../SlaveADC_Lab_5.X/I2C.c: 86:     SSPCON = 0x36;
+  1087  0149  3036               	movlw	54
+  1088  014A  1283               	bcf	3,5	;RP0=0, select bank0
+  1089  014B  1303               	bcf	3,6	;RP1=0, select bank0
+  1090  014C  0094               	movwf	20	;volatile
+  1091                           
+  1092                           ;../SlaveADC_Lab_5.X/I2C.c: 87:     SSPSTAT = 0x80;
+  1093  014D  3080               	movlw	128
+  1094  014E  1683               	bsf	3,5	;RP0=1, select bank1
+  1095  014F  1303               	bcf	3,6	;RP1=0, select bank1
+  1096  0150  0094               	movwf	20	;volatile
+  1097                           
+  1098                           ;../SlaveADC_Lab_5.X/I2C.c: 88:     SSPCON2 = 0x01;
+  1099  0151  3001               	movlw	1
+  1100  0152  0091               	movwf	17	;volatile
+  1101  0153                     l750:	
+  1102                           
+  1103                           ;../SlaveADC_Lab_5.X/I2C.c: 89:     TRISC3 = 1;
+  1104  0153  1587               	bsf	7,3	;volatile
+  1105  0154                     l752:	
+  1106                           
+  1107                           ;../SlaveADC_Lab_5.X/I2C.c: 90:     TRISC4 = 1;
+  1108  0154  1607               	bsf	7,4	;volatile
+  1109  0155                     l754:	
+  1110                           
+  1111                           ;../SlaveADC_Lab_5.X/I2C.c: 91:     GIE = 1;
+  1112  0155  178B               	bsf	11,7	;volatile
+  1113  0156                     l756:	
+  1114                           
+  1115                           ;../SlaveADC_Lab_5.X/I2C.c: 92:     PEIE = 1;
+  1116  0156  170B               	bsf	11,6	;volatile
+  1117  0157                     l758:	
+  1118                           
+  1119                           ;../SlaveADC_Lab_5.X/I2C.c: 93:     SSPIF = 0;
+  1120  0157  1283               	bcf	3,5	;RP0=0, select bank0
+  1121  0158  1303               	bcf	3,6	;RP1=0, select bank0
+  1122  0159  118C               	bcf	12,3	;volatile
+  1123  015A                     l760:	
+  1124                           
+  1125                           ;../SlaveADC_Lab_5.X/I2C.c: 94:     SSPIE = 1;
+  1126  015A  1683               	bsf	3,5	;RP0=1, select bank1
+  1127  015B  1303               	bcf	3,6	;RP1=0, select bank1
+  1128  015C  158C               	bsf	12,3	;volatile
+  1129  015D                     l55:	
+  1130  015D  0008               	return
+  1131  015E                     __end_of_I2C_Slave_Init:	
+  1132                           
+  1133                           	psect	text4
+  1134  0083                     __ptext4:	
+  1135 ;; *************** function _isr *****************
+  1136 ;; Defined at:
+  1137 ;;		line 59 in file "D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave.c"
+  1138 ;; Parameters:    Size  Location     Type
+  1139 ;;		None
+  1140 ;; Auto vars:     Size  Location     Type
+  1141 ;;		None
+  1142 ;; Return value:  Size  Location     Type
+  1143 ;;                  1    wreg      void 
+  1144 ;; Registers used:
+  1145 ;;		wreg
+  1146 ;; Tracked objects:
+  1147 ;;		On entry : 0/0
+  1148 ;;		On exit  : 0/0
+  1149 ;;		Unchanged: 0/0
+  1150 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1151 ;;      Params:         0       0       0       0       0
+  1152 ;;      Locals:         0       0       0       0       0
+  1153 ;;      Temps:          3       0       0       0       0
+  1154 ;;      Totals:         3       0       0       0       0
+  1155 ;;Total ram usage:        3 bytes
+  1156 ;; Hardware stack levels used:    1
+  1157 ;; This function calls:
+  1158 ;;		Nothing
+  1159 ;; This function is called by:
+  1160 ;;		Interrupt level 1
+  1161 ;; This function uses a non-reentrant model
+  1162 ;;
+  1163                           
+  1164                           
+  1165                           ;psect for function _isr
+  1166  0083                     _isr:	
+  1167  0083                     i1l826:	
+  1168                           
+  1169                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 61:     if(PIR1bits.SSPIF == 1){
+  1170  0083  1283               	bcf	3,5	;RP0=0, select bank0
+  1171  0084  1303               	bcf	3,6	;RP1=0, select bank0
+  1172  0085  1D8C               	btfss	12,3	;volatile
+  1173  0086  2888               	goto	u5_21
+  1174  0087  2889               	goto	u5_20
+  1175  0088                     u5_21:	
+  1176  0088  28E1               	goto	i1l123
+  1177  0089                     u5_20:	
+  1178  0089                     i1l828:	
+  1179                           
+  1180                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 63:             SSPCONbits.CKP = 0;
+  1181  0089  1214               	bcf	20,4	;volatile
+  1182                           
+  1183                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 65:             if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+  1184  008A  1B14               	btfsc	20,6	;volatile
+  1185  008B  288D               	goto	u6_21
+  1186  008C  288E               	goto	u6_20
+  1187  008D                     u6_21:	
+  1188  008D  2892               	goto	i1l832
+  1189  008E                     u6_20:	
+  1190  008E                     i1l830:	
+  1191  008E  1F94               	btfss	20,7	;volatile
+  1192  008F  2891               	goto	u7_21
+  1193  0090  2892               	goto	u7_20
+  1194  0091                     u7_21:	
+  1195  0091  2899               	goto	i1l840
+  1196  0092                     u7_20:	
+  1197  0092                     i1l832:	
+  1198                           
+  1199                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 66:                 z = SSPBUF;
+  1200  0092  0813               	movf	19,w	;volatile
+  1201  0093  00F0               	movwf	??_isr
+  1202  0094  0870               	movf	??_isr,w
+  1203  0095  00F9               	movwf	_z
+  1204  0096                     i1l834:	
+  1205                           
+  1206                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 67:                 SSPCONbits.SSPOV = 0;
+  1207  0096  1314               	bcf	20,6	;volatile
+  1208  0097                     i1l836:	
+  1209                           
+  1210                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 68:                 SSPCONbits.WCOL = 0;
+  1211  0097  1394               	bcf	20,7	;volatile
+  1212  0098                     i1l838:	
+  1213                           
+  1214                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 69:                 SSPCONbits.CKP = 1;
+  1215  0098  1614               	bsf	20,4	;volatile
+  1216  0099                     i1l840:	
+  1217                           
+  1218                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 72:             if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+  1219  0099  1683               	bsf	3,5	;RP0=1, select bank1
+  1220  009A  1303               	bcf	3,6	;RP1=0, select bank1
+  1221  009B  1A94               	btfsc	20,5	;volatile
+  1222  009C  289E               	goto	u8_21
+  1223  009D  289F               	goto	u8_20
+  1224  009E                     u8_21:	
+  1225  009E  28BD               	goto	i1l114
+  1226  009F                     u8_20:	
+  1227  009F                     i1l842:	
+  1228  009F  1914               	btfsc	20,2	;volatile
+  1229  00A0  28A2               	goto	u9_21
+  1230  00A1  28A3               	goto	u9_20
+  1231  00A2                     u9_21:	
+  1232  00A2  28BD               	goto	i1l114
+  1233  00A3                     u9_20:	
+  1234  00A3                     i1l844:	
+  1235                           
+  1236                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 73:                 z = SSPBUF;
+  1237  00A3  1283               	bcf	3,5	;RP0=0, select bank0
+  1238  00A4  1303               	bcf	3,6	;RP1=0, select bank0
+  1239  00A5  0813               	movf	19,w	;volatile
+  1240  00A6  00F0               	movwf	??_isr
+  1241  00A7  0870               	movf	??_isr,w
+  1242  00A8  00F9               	movwf	_z
+  1243  00A9                     i1l846:	
+  1244                           
+  1245                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 74:                 PIR1bits.SSPIF = 0;
+  1246  00A9  118C               	bcf	12,3	;volatile
+  1247  00AA                     i1l848:	
+  1248                           
+  1249                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 75:                 SSPCONbits.CKP = 1;
+  1250  00AA  1614               	bsf	20,4	;volatile
+  1251  00AB                     i1l115:	
+  1252                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 76:                 while(!SSPSTATbits.BF);
+  1253                           
+  1254  00AB  1683               	bsf	3,5	;RP0=1, select bank1
+  1255  00AC  1303               	bcf	3,6	;RP1=0, select bank1
+  1256  00AD  1C14               	btfss	20,0	;volatile
+  1257  00AE  28B0               	goto	u10_21
+  1258  00AF  28B1               	goto	u10_20
+  1259  00B0                     u10_21:	
+  1260  00B0  28AB               	goto	i1l115
+  1261  00B1                     u10_20:	
+  1262  00B1                     i1l850:	
+  1263                           
+  1264                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 77:                 count = SSPBUF;
+  1265  00B1  1283               	bcf	3,5	;RP0=0, select bank0
+  1266  00B2  1303               	bcf	3,6	;RP1=0, select bank0
+  1267  00B3  0813               	movf	19,w	;volatile
+  1268  00B4  00F0               	movwf	??_isr
+  1269  00B5  0870               	movf	??_isr,w
+  1270  00B6  00FA               	movwf	_count
+  1271                           
+  1272                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 78:                 _delay((unsigned long)((250)*(8000000/4000000.0)));
+  1273  00B7  30A6               	movlw	166
+  1274  00B8  00F0               	movwf	??_isr
+  1275  00B9                     u24_27:	
+  1276  00B9  0BF0               	decfsz	??_isr,f
+  1277  00BA  28B9               	goto	u24_27
+  1278  00BB  0000               	nop
+  1279                           
+  1280                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 80:             }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+  1281  00BC  28DE               	goto	i1l118
+  1282  00BD                     i1l114:	
+  1283  00BD  1A94               	btfsc	20,5	;volatile
+  1284  00BE  28C0               	goto	u11_21
+  1285  00BF  28C1               	goto	u11_20
+  1286  00C0                     u11_21:	
+  1287  00C0  28DE               	goto	i1l118
+  1288  00C1                     u11_20:	
+  1289  00C1                     i1l852:	
+  1290  00C1  1D14               	btfss	20,2	;volatile
+  1291  00C2  28C4               	goto	u12_21
+  1292  00C3  28C5               	goto	u12_20
+  1293  00C4                     u12_21:	
+  1294  00C4  28DE               	goto	i1l118
+  1295  00C5                     u12_20:	
+  1296  00C5                     i1l854:	
+  1297                           
+  1298                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 81:                 z = SSPBUF;
+  1299  00C5  1283               	bcf	3,5	;RP0=0, select bank0
+  1300  00C6  1303               	bcf	3,6	;RP1=0, select bank0
+  1301  00C7  0813               	movf	19,w	;volatile
+  1302  00C8  00F0               	movwf	??_isr
+  1303  00C9  0870               	movf	??_isr,w
+  1304  00CA  00F9               	movwf	_z
+  1305  00CB                     i1l856:	
+  1306                           
+  1307                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 82:                 BF = 0;
+  1308  00CB  1683               	bsf	3,5	;RP0=1, select bank1
+  1309  00CC  1303               	bcf	3,6	;RP1=0, select bank1
+  1310  00CD  1014               	bcf	20,0	;volatile
+  1311                           
+  1312                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 83:                 SSPBUF = count;
+  1313  00CE  087A               	movf	_count,w
+  1314  00CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1315  00D0  1303               	bcf	3,6	;RP1=0, select bank0
+  1316  00D1  0093               	movwf	19	;volatile
+  1317  00D2                     i1l858:	
+  1318                           
+  1319                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 84:                 SSPCONbits.CKP = 1;
+  1320  00D2  1614               	bsf	20,4	;volatile
+  1321                           
+  1322                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 85:                 _delay((unsigned long)((250)*(8000000/4000000.0)));
+  1323  00D3  30A6               	movlw	166
+  1324  00D4  00F0               	movwf	??_isr
+  1325  00D5                     u25_27:	
+  1326  00D5  0BF0               	decfsz	??_isr,f
+  1327  00D6  28D5               	goto	u25_27
+  1328  00D7  0000               	nop
+  1329  00D8                     i1l120:	
+  1330                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 86:                 while(SSPSTATbits.BF);
+  1331                           
+  1332  00D8  1683               	bsf	3,5	;RP0=1, select bank1
+  1333  00D9  1303               	bcf	3,6	;RP1=0, select bank1
+  1334  00DA  1814               	btfsc	20,0	;volatile
+  1335  00DB  28DD               	goto	u13_21
+  1336  00DC  28DE               	goto	u13_20
+  1337  00DD                     u13_21:	
+  1338  00DD  28D8               	goto	i1l120
+  1339  00DE                     u13_20:	
+  1340  00DE                     i1l118:	
+  1341                           
+  1342                           ;D:/Hector/Documents/UVG/7mo Semestre/Digital 2/Laboratorio 5/SlaveLED_Lab_5.X/LED_Slave
+      +                          .c: 89:             PIR1bits.SSPIF = 0;
+  1343  00DE  1283               	bcf	3,5	;RP0=0, select bank0
+  1344  00DF  1303               	bcf	3,6	;RP1=0, select bank0
+  1345  00E0  118C               	bcf	12,3	;volatile
+  1346  00E1                     i1l123:	
+  1347  00E1  0872               	movf	??_isr+2,w
+  1348  00E2  008A               	movwf	10
+  1349  00E3  0E71               	swapf	(??_isr+1)^(0+4294967168),w
+  1350  00E4  0083               	movwf	3
+  1351  00E5  0EFE               	swapf	btemp,f
+  1352  00E6  0E7E               	swapf	btemp,w
+  1353  00E7  0009               	retfie
+  1354  00E8                     __end_of_isr:	
+  1355  007E                     btemp	set	126	;btemp
+  1356  007E                     wtemp0	set	126
+  1357                           
+  1358                           	psect	intentry
+  1359  0004                     __pintentry:	
+  1360                           ;incstack = 0
+  1361                           ; Regs used in _isr: [wreg]
+  1362                           
+  1363  0004                     interrupt_function:	
+  1364  007E                     saved_w	set	btemp
+  1365  0004  00FE               	movwf	btemp
+  1366  0005  0E03               	swapf	3,w
+  1367  0006  00F1               	movwf	??_isr+1
+  1368  0007  080A               	movf	10,w
+  1369  0008  00F2               	movwf	??_isr+2
+  1370  0009  120A  118A  2883   	ljmp	_isr
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         5
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      8      13
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_initOsc
+    _init->_I2C_Slave_Init
+
+Critical Paths under _isr in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _isr in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0      30
+                                              6 COMMON     2     2      0
+                               _init
+                            _initOsc
+ ---------------------------------------------------------------------------------
+ (1) _initOsc                                              3     3      0      15
+                                              3 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (1) _init                                                 0     0      0      15
+                     _I2C_Slave_Init
+ ---------------------------------------------------------------------------------
+ (2) _I2C_Slave_Init                                       1     1      0      15
+                                              3 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _isr                                                  3     3      0       0
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _init
+     _I2C_Slave_Init
+   _initOsc
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      8       D       1       92.9%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       D       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       D      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Sun Feb 23 18:24:55 2020
+
+                       _z 0079               __CFG_CP$OFF 0000               _SSPSTATbits 0094  
+                      _BF 04A0                        l55 015D                       l140 016F  
+                     l150 00FC                       l151 0102                       l152 0108  
+                     l153 010E                       l154 0114                       l146 00EA  
+                     l155 011A                       l147 0142                       l156 0143  
+                     l148 00F0                       l149 00F6                       l900 005E  
+                     l750 0153                       l902 0062                       l910 0074  
+                     l760 015A                       l752 0154                       l912 0079  
+                     l904 006B                       l754 0155                       l770 0120  
+                     l906 006F                       l756 0156                       l748 0145  
+                     l780 0165                       l908 0073                       l860 0018  
+                     l758 0157                       l782 0168                       l934 0128  
+                     l766 00E9                       l870 0028                       l862 001E  
+                     l784 0169                       l776 015E                       l880 0038  
+                     l872 0029                       l864 0023                       l778 0163  
+                     l890 0050                       l882 0041                       l874 002D  
+                     l866 0026                       l892 0051                       l884 0045  
+                     l876 002F                       l868 0027                       l894 0053  
+                     l886 0049                       l878 0034                       l896 0057  
+                     l888 004A                       l898 0059                       _GIE 005F  
+                     u200 0062                       u201 0061                       u210 0079  
+                     u211 0078                       u140 002D                       u141 002C  
+                     u150 0034                       u151 0033                       u160 0038  
+                     u161 0037                       u170 0050                       u171 004F  
+                     u227 003C                       u180 0057                       u237 0066  
+                     u181 0056                       u190 005E                       u191 005D  
+            __CFG_CPD$OFF 0000                       _isr 0083              __CFG_LVP$OFF 0000  
+                    ?_isr 0070                      _PEIE 005E                      u5_20 0089  
+                    u5_21 0088                      u6_20 008E                      u6_21 008D  
+                    u7_20 0092                      u7_21 0091                      u8_20 009F  
+                    u8_21 009E                      u9_20 00A3                      u9_21 00A2  
+            __CFG_WRT$OFF 0000                      _dato 0078                      _main 0018  
+                    _init 015E                      btemp 007E                      start 000C  
+           __CFG_IESO$OFF 0000                     ??_isr 0070                     ?_main 0070  
+                   ?_init 0070             __CFG_WDTE$OFF 0000                     _ANSEL 0188  
+                   i1l120 00D8                     i1l114 00BD                     i1l115 00AB  
+                   i1l123 00E1                     i1l118 00DE                     i1l830 008E  
+                   i1l840 0099                     i1l832 0092                     i1l850 00B1  
+                   i1l842 009F                     i1l834 0096                     i1l826 0083  
+                   i1l852 00C1                     i1l844 00A3                     i1l836 0097  
+                   i1l828 0089                     i1l854 00C5                     i1l846 00A9  
+                   i1l838 0098                     i1l856 00CB                     i1l848 00AA  
+                   i1l858 00D2                     u10_20 00B1                     u10_21 00B0  
+                   u11_20 00C1                     u11_21 00C0                     u12_20 00C5  
+                   u12_21 00C4                     u13_20 00DE                     u13_21 00DD  
+                   u24_27 00B9                     u25_27 00D5                     _PORTA 0005  
+                   _PORTB 0006                     _PORTC 0007                     _PORTD 0008  
+                   _TRISA 0085                     _TRISB 0086                     _TRISC 0087  
+                   _TRISD 0088                     _SSPIE 0463                     _SSPIF 0063  
+          __CFG_FCMEN$OFF 0000           __end_of_initOsc 0144                     _count 007A  
+          __CFG_BOREN$OFF 0000                     pclath 000A                     status 0003  
+                   wtemp0 007E            __CFG_MCLRE$OFF 0000           __initialization 000F  
+            __end_of_main 0083              __end_of_init 0170                    ??_main 0076  
+                  ??_init 0074                    _ANSELH 0189               initOsc@frec 0075  
+                  _SSPADD 0093                    _TRISC3 043B                    _TRISC4 043C  
+                  _SSPCON 0014                    _SSPBUF 0013            __CFG_PWRTE$OFF 0000  
+               ??_initOsc 0073                    saved_w 007E   __end_of__initialization 0014  
+          __pcstackCOMMON 0070   __size_of_I2C_Slave_Init 001A                _add_button 007C  
+   I2C_Slave_Init@address 0073                __pmaintext 0018                __pintentry 0004  
+                 _SSPCON2 0091                   _SSPSTAT 0094                   __ptext1 00E8  
+                 __ptext2 015E                   __ptext3 0144                   __ptext4 0083  
+                 _initOsc 00E8              __size_of_isr 0065      end_of_initialization 0014  
+          _I2C_Slave_Init 0144                 _PORTDbits 0008                _sub_button 007B  
+               _TRISCbits 0087    __end_of_I2C_Slave_Init 015E       start_initialization 000F  
+             __end_of_isr 00E8  __CFG_FOSC$INTRC_NOCLKOUT 0000           ?_I2C_Slave_Init 0070  
+             __pbssCOMMON 0078                 ___latbits 0002                  ?_initOsc 0070  
+       interrupt_function 0004                  _PIR1bits 000C          __size_of_initOsc 005C  
+       __CFG_BOR4V$BOR40V 0000          ??_I2C_Slave_Init 0073             __size_of_main 006B  
+           __size_of_init 0012                  intlevel1 0000                _OSCCONbits 008F  
+             _SSPCON2bits 0091                _SSPCONbits 0014  
